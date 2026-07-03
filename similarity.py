@@ -3,9 +3,9 @@ from sentence_transformers import SentenceTransformer, util
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 
-def find_ai_similar_incidents(new_description: str, historical_incidents: list, top_k: int = 3):
-    if not historical_incidents:
-        return []
+def find_ai_similar_incidents(new_description: str, historical_incidents: list, top_k: int = 5):
+    return historical_incidents[:top_k]
+  
 
     historical_texts = [
         f"{item.get('title', '')} {item.get('description', '')}"
