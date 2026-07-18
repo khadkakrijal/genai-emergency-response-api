@@ -1,3 +1,4 @@
+import os
 import time
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,11 +14,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-  allow_origins=[
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://genai-emergency-response-frontend.vercel.app",
-],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://genai-emergency-response-frontend.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,7 +39,18 @@ class IncidentRequest(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "GenAI Emergency Response API is running!"}
+    return {
+        "message": "GenAI Emergency Response API is running!"
+    }
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "healthy",
+        "service": "GenAI Emergency Response API",
+        "ai_provider": "Groq" if os.getenv("USE_GROQ", "false").lower() == "true" else "Ollama"
+    }
 
 
 @app.get("/incidents")
@@ -77,7 +89,9 @@ def analyse_incident(data: IncidentRequest):
         "responders": ai_result.get("responders"),
         "key_risks": ai_result.get("key_risks"),
 
-        "ai_model": "llama3.2",
+        # Automatically shows which AI provider is being used
+        "ai_model": "Groq Llama 3.3" if os.getenv("USE_GROQ", "false").lower() == "true" else "Ollama Llama 3.2",
+
         "processing_time_ms": processing_time_ms,
         "status": "Completed",
     }
