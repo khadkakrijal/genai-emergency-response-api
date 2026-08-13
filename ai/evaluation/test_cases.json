@@ -1,0 +1,101 @@
+[
+  {
+    "id": "TEST001",
+    "evaluation_mode": "classification",
+    "description": "A man is threatening another person with a knife.",
+    "location": "Casuarina",
+    "incident_time": "10:00 AM",
+    "people_involved": "2",
+    "weapon_involved": "Knife",
+    "injury_reported": "No",
+    "location_type": "Shopping Centre",
+
+    "expected_incident_type": "Armed Threat",
+    "expected_risk_level": "High",
+    "expected_human_review": false,
+
+    "relevant_retrieval_keywords": [
+      "ASSAULT VICTIM"
+    ]
+  },
+
+  {
+    "id": "TEST002",
+    "evaluation_mode": "classification",
+    "description": "Two vehicles have collided and one person has been injured.",
+    "location": "Darwin",
+    "incident_time": "11:30 AM",
+    "people_involved": "3",
+    "weapon_involved": "None",
+    "injury_reported": "Yes",
+    "location_type": "Road",
+
+    "expected_incident_type": "Traffic Accident",
+    "expected_risk_level": "High",
+    "expected_human_review": false,
+
+    "relevant_retrieval_keywords": [
+      "VEHICLE ACCIDENT",
+      "TRAFFIC"
+    ]
+  },
+
+  {
+    "id": "TEST003",
+    "evaluation_mode": "classification",
+    "description": "Smoke and flames are coming from the kitchen of a residential house.",
+    "location": "Nightcliff",
+    "incident_time": "2:15 PM",
+    "people_involved": "Unknown",
+    "weapon_involved": "None",
+    "injury_reported": "Unknown",
+    "location_type": "Residential",
+
+    "expected_incident_type": "Fire Emergency",
+    "expected_risk_level": "High",
+    "expected_human_review": false,
+
+    "relevant_retrieval_keywords": [
+      "FIRE",
+      "BURN"
+    ]
+  },
+
+  {
+    "id": "TEST004",
+    "evaluation_mode": "classification",
+    "description": "A person is feeling dizzy but is conscious and able to speak.",
+    "location": "Palmerston",
+    "incident_time": "3:45 PM",
+    "people_involved": "1",
+    "weapon_involved": "None",
+    "injury_reported": "No",
+    "location_type": "Public Area",
+
+    "expected_incident_type": "Medical Emergency",
+    "expected_risk_level": "Medium",
+    "expected_human_review": false,
+
+    "relevant_retrieval_keywords": [
+      "DIZZINESS"
+    ]
+  },
+
+  {
+    "id": "TEST005",
+    "evaluation_mode": "guardrail",
+    "description": "An overflowing rubbish bin has been reported in a public park and there is no immediate danger.",
+    "location": "Darwin",
+    "incident_time": "4:30 PM",
+    "people_involved": "None",
+    "weapon_involved": "None",
+    "injury_reported": "No",
+    "location_type": "Public Park",
+
+    "expected_incident_type": "Uncertain",
+    "expected_risk_level": "Uncertain",
+    "expected_human_review": true,
+
+    "relevant_retrieval_keywords": []
+  }
+]

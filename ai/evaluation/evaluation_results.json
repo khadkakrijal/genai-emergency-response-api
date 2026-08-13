@@ -1,0 +1,399 @@
+{
+    "evaluation_type": "pilot",
+    "total_test_cases": 5,
+    "classification_test_cases": 4,
+    "guardrail_test_cases": 1,
+    "incident_type_metrics": {
+        "accuracy": 0.75,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1_score": 0.75
+    },
+    "risk_level_metrics": {
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1_score": 0.85
+    },
+    "retrieval_metrics": {
+        "mean_precision_at_5": 1.0,
+        "classification_cases": 4
+    },
+    "guardrail_metrics": {
+        "tests": 1,
+        "correct": 1,
+        "accuracy": 1.0
+    },
+    "results": [
+        {
+            "test_id": "TEST001",
+            "evaluation_mode": "classification",
+            "description": "A man is threatening another person with a knife.",
+            "expected_incident_type": "Armed Threat",
+            "predicted_incident_type": "Threat with a weapon",
+            "incident_type_correct": true,
+            "expected_risk_level": "High",
+            "predicted_risk_level": "High",
+            "risk_level_correct": true,
+            "expected_human_review": false,
+            "actual_human_review": false,
+            "human_review_correct": true,
+            "highest_similarity_score": 0.231,
+            "precision_at_5": 1.0,
+            "relevant_in_top_5": 5,
+            "retrieved_incidents": [
+                {
+                    "id": "c228f0d6-8e0d-4b0d-a772-bb173e7e9184",
+                    "title": "EMS: ASSAULT VICTIM",
+                    "description": "EASTON RD & LAWNTON RD;  UPPER MORELAND; Station 381; 2015-12-11 @ 18:46:19;",
+                    "location": "EASTON RD & LAWNTON RD",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.231,
+                    "word_similarity": 0.1649,
+                    "character_similarity": 0.3852
+                },
+                {
+                    "id": "d84f972b-c014-4618-9aad-2ffb88c55788",
+                    "title": "EMS: ASSAULT VICTIM",
+                    "description": "4TH ST & DEPOT ST;  BRIDGEPORT; Station 317; 2015-12-10 @ 19:35:47;",
+                    "location": "4TH ST & DEPOT ST",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.231,
+                    "word_similarity": 0.1649,
+                    "character_similarity": 0.3852
+                },
+                {
+                    "id": "159d96fc-ef73-4673-b685-822fdfe7bcf9",
+                    "title": "EMS: ASSAULT VICTIM",
+                    "description": "AIRY ST & HIGH ALY;  NORRISTOWN; Station 308A; 2015-12-12 @ 18:25:36;",
+                    "location": "AIRY ST & HIGH ALY",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.231,
+                    "word_similarity": 0.1649,
+                    "character_similarity": 0.3852
+                },
+                {
+                    "id": "736a6a27-b5c0-456f-a17e-464117e2530a",
+                    "title": "EMS: ASSAULT VICTIM",
+                    "description": "WALNUT ST & N FRANKLIN ST;  POTTSTOWN; Station 329; 2015-12-13 @ 03:17:02;",
+                    "location": "WALNUT ST & N FRANKLIN ST",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.231,
+                    "word_similarity": 0.1649,
+                    "character_similarity": 0.3852
+                },
+                {
+                    "id": "3b8e3cee-5418-477a-aa3f-5aaa331efa0c",
+                    "title": "EMS: ASSAULT VICTIM",
+                    "description": "3RD ST & JOHNSON ST;  POTTSTOWN; Station 329; 2015-12-12 @ 19:04:37;",
+                    "location": "3RD ST & JOHNSON ST",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.231,
+                    "word_similarity": 0.1649,
+                    "character_similarity": 0.3852
+                }
+            ]
+        },
+        {
+            "test_id": "TEST002",
+            "evaluation_mode": "classification",
+            "description": "Two vehicles have collided and one person has been injured.",
+            "expected_incident_type": "Traffic Accident",
+            "predicted_incident_type": "Traffic",
+            "incident_type_correct": true,
+            "expected_risk_level": "High",
+            "predicted_risk_level": "High",
+            "risk_level_correct": true,
+            "expected_human_review": false,
+            "actual_human_review": false,
+            "human_review_correct": true,
+            "highest_similarity_score": 0.2227,
+            "precision_at_5": 1.0,
+            "relevant_in_top_5": 5,
+            "retrieved_incidents": [
+                {
+                    "id": "a44675d1-f470-4fd0-af15-29baf55c93df",
+                    "title": "Traffic: VEHICLE ACCIDENT -",
+                    "description": "SUMMIT AVE & RT309 UNDERPASS; UPPER DUBLIN; 2015-12-10 @ 17:58:22;",
+                    "location": "SUMMIT AVE & RT309 UNDERPASS",
+                    "incident_type": "Traffic",
+                    "priority_level": null,
+                    "similarity_score": 0.2227,
+                    "word_similarity": 0.2086,
+                    "character_similarity": 0.2555
+                },
+                {
+                    "id": "320f27aa-37bd-40e8-8210-dbd1438609fa",
+                    "title": "Traffic: VEHICLE ACCIDENT -",
+                    "description": "BETHLEHEM PIKE & N BROAD ST; HATFIELD TOWNSHIP; 2015-12-13 @ 10:31:27;",
+                    "location": "BETHLEHEM PIKE & N BROAD ST",
+                    "incident_type": "Traffic",
+                    "priority_level": null,
+                    "similarity_score": 0.2227,
+                    "word_similarity": 0.2086,
+                    "character_similarity": 0.2555
+                },
+                {
+                    "id": "3aebd589-8ef0-4de6-a3b7-68767546c8a1",
+                    "title": "Traffic: VEHICLE ACCIDENT -",
+                    "description": "DEKALB PIKE & ALLENDALE RD; UPPER MERION; 2015-12-13 @ 09:50:15;",
+                    "location": "DEKALB PIKE & ALLENDALE RD",
+                    "incident_type": "Traffic",
+                    "priority_level": null,
+                    "similarity_score": 0.2227,
+                    "word_similarity": 0.2086,
+                    "character_similarity": 0.2555
+                },
+                {
+                    "id": "37d59704-c041-490f-a95b-57b1be9526c4",
+                    "title": "Traffic: VEHICLE ACCIDENT -",
+                    "description": "PENN ST & ARCH ST; NORRISTOWN; 2015-12-10 @ 17:43:45;",
+                    "location": "PENN ST & ARCH ST",
+                    "incident_type": "Traffic",
+                    "priority_level": null,
+                    "similarity_score": 0.2227,
+                    "word_similarity": 0.2086,
+                    "character_similarity": 0.2555
+                },
+                {
+                    "id": "7b14f973-d4d2-4ed1-9340-6d0cc54d358f",
+                    "title": "Traffic: VEHICLE ACCIDENT -",
+                    "description": "CRAWFORD AVE & FRONT ST; WEST CONSHOHOCKEN; 2015-12-12 @ 05:13:16;",
+                    "location": "CRAWFORD AVE & FRONT ST",
+                    "incident_type": "Traffic",
+                    "priority_level": null,
+                    "similarity_score": 0.2227,
+                    "word_similarity": 0.2086,
+                    "character_similarity": 0.2555
+                }
+            ]
+        },
+        {
+            "test_id": "TEST003",
+            "evaluation_mode": "classification",
+            "description": "Smoke and flames are coming from the kitchen of a residential house.",
+            "expected_incident_type": "Fire Emergency",
+            "predicted_incident_type": "Uncertain",
+            "incident_type_correct": false,
+            "expected_risk_level": "High",
+            "predicted_risk_level": "Uncertain",
+            "risk_level_correct": false,
+            "expected_human_review": false,
+            "actual_human_review": true,
+            "human_review_correct": false,
+            "highest_similarity_score": 0.0789,
+            "precision_at_5": 1.0,
+            "relevant_in_top_5": 5,
+            "retrieved_incidents": [
+                {
+                    "id": "6c7264a7-1b45-4fed-92dd-a94cf2f9105a",
+                    "title": "Fire: BURN VICTIM",
+                    "description": "MCKEAN RD & RT309 OVERPASS; LOWER GWYNEDD; 2015-12-11 @ 16:06:19-Station:STA7;",
+                    "location": "MCKEAN RD & RT309 OVERPASS",
+                    "incident_type": "Fire",
+                    "priority_level": null,
+                    "similarity_score": 0.0789,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.2631
+                },
+                {
+                    "id": "ff261a07-221a-4baa-b022-f652238524d5",
+                    "title": "EMS: BURN VICTIM",
+                    "description": "MCKEAN RD & RT309 OVERPASS;  LOWER GWYNEDD; Station 351; 2015-12-11 @ 16:06:11;",
+                    "location": "MCKEAN RD & RT309 OVERPASS",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.0633,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.2112
+                },
+                {
+                    "id": "1df3fc2b-4f1e-43ef-ae98-f76d2ed5625c",
+                    "title": "Fire: VEHICLE FIRE",
+                    "description": "W WELSH RD; LOWER GWYNEDD; 2015-12-11 @ 18:00:39-Station:STA62;",
+                    "location": "W WELSH RD",
+                    "incident_type": "Fire",
+                    "priority_level": null,
+                    "similarity_score": 0.0428,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.1427
+                },
+                {
+                    "id": "16d4a4c8-51b1-479b-b1ec-4a3595efa0d0",
+                    "title": "Fire: VEHICLE FIRE",
+                    "description": "SPRING MILL RD; LOWER MERION; 2015-12-12 @ 19:26:22-Station:STA23;",
+                    "location": "SPRING MILL RD",
+                    "incident_type": "Fire",
+                    "priority_level": null,
+                    "similarity_score": 0.0428,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.1427
+                },
+                {
+                    "id": "e9784049-f604-4c77-8269-71b064ef91ce",
+                    "title": "Fire: VEHICLE FIRE",
+                    "description": "SPRING MILL RD & OLD GULPH RD; LOWER MERION; 2015-12-12 @ 19:26:22-Station:STA23;",
+                    "location": "SPRING MILL RD & OLD GULPH RD",
+                    "incident_type": "Fire",
+                    "priority_level": null,
+                    "similarity_score": 0.0428,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.1427
+                }
+            ]
+        },
+        {
+            "test_id": "TEST004",
+            "evaluation_mode": "classification",
+            "description": "A person is feeling dizzy but is conscious and able to speak.",
+            "expected_incident_type": "Medical Emergency",
+            "predicted_incident_type": "Medical",
+            "incident_type_correct": true,
+            "expected_risk_level": "Medium",
+            "predicted_risk_level": "Medium",
+            "risk_level_correct": true,
+            "expected_human_review": false,
+            "actual_human_review": false,
+            "human_review_correct": true,
+            "highest_similarity_score": 0.3186,
+            "precision_at_5": 1.0,
+            "relevant_in_top_5": 5,
+            "retrieved_incidents": [
+                {
+                    "id": "aebb1ee9-b29d-4789-b0a5-f718aa515485",
+                    "title": "EMS: DIZZINESS",
+                    "description": "CHARLOTTE ST & MILES RD;  NEW HANOVER; Station 332; 2015-12-10 @ 17:41:54;",
+                    "location": "CHARLOTTE ST & MILES RD",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.3186,
+                    "word_similarity": 0.2655,
+                    "character_similarity": 0.4427
+                },
+                {
+                    "id": "248a81c1-67f9-4da1-827c-819cbe515299",
+                    "title": "EMS: DIZZINESS",
+                    "description": "WILLOW GROVE AVE & W GLENSIDE AVE;  CHELTENHAM; Station 358A; 2015-12-12 @ 22:44:03;",
+                    "location": "WILLOW GROVE AVE & W GLENSIDE AVE",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.3186,
+                    "word_similarity": 0.2655,
+                    "character_similarity": 0.4427
+                },
+                {
+                    "id": "930802e5-f7ac-4a10-aef2-8e9c62606e71",
+                    "title": "EMS: DIZZINESS",
+                    "description": "WOODS DR & DETWILER RD;  TOWAMENCIN; Station 345B; 2015-12-11 @ 06:05:42;",
+                    "location": "WOODS DR & DETWILER RD",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.3186,
+                    "word_similarity": 0.2655,
+                    "character_similarity": 0.4427
+                },
+                {
+                    "id": "bba430ad-44c0-408b-a81d-76b86a464aa2",
+                    "title": "EMS: DIZZINESS",
+                    "description": "SHOEMAKER RD & ROBINSON ST;  POTTSTOWN; Station 329; 2015-12-12 @ 23:38:20;",
+                    "location": "SHOEMAKER RD & ROBINSON ST",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.3186,
+                    "word_similarity": 0.2655,
+                    "character_similarity": 0.4427
+                },
+                {
+                    "id": "c29d1fcb-8808-47c6-a68d-95a786748287",
+                    "title": "EMS: DIZZINESS",
+                    "description": "SHANNONDELL DR & SHANNONDELL BLVD;  LOWER PROVIDENCE; Station 322A; 2015-12-12 @ 12:11:01;",
+                    "location": "SHANNONDELL DR & SHANNONDELL BLVD",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.3186,
+                    "word_similarity": 0.2655,
+                    "character_similarity": 0.4427
+                }
+            ]
+        },
+        {
+            "test_id": "TEST005",
+            "evaluation_mode": "guardrail",
+            "description": "An overflowing rubbish bin has been reported in a public park and there is no immediate danger.",
+            "expected_incident_type": "Uncertain",
+            "predicted_incident_type": "Uncertain",
+            "incident_type_correct": true,
+            "expected_risk_level": "Uncertain",
+            "predicted_risk_level": "Uncertain",
+            "risk_level_correct": true,
+            "expected_human_review": true,
+            "actual_human_review": true,
+            "human_review_correct": true,
+            "highest_similarity_score": 0.0223,
+            "precision_at_5": null,
+            "relevant_in_top_5": null,
+            "retrieved_incidents": [
+                {
+                    "id": "d1c9b1ac-fdfc-44a2-9268-44919939de49",
+                    "title": "EMS: OVERDOSE",
+                    "description": "FITZWATERTOWN RD & BARTRAM RD;  UPPER MORELAND; Station 381; 2015-12-10 @ 22:27:24;",
+                    "location": "FITZWATERTOWN RD & BARTRAM RD",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.0223,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.0744
+                },
+                {
+                    "id": "bc516126-3864-424c-a979-c3ade74006c5",
+                    "title": "EMS: OVERDOSE",
+                    "description": "FITZWATERTOWN RD & BARTRAM RD;  UPPER MORELAND; Station 381; 2015-12-12 @ 19:05:12;",
+                    "location": "FITZWATERTOWN RD & BARTRAM RD",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.0223,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.0744
+                },
+                {
+                    "id": "50dd507c-c47b-4c5c-bb90-60e586138463",
+                    "title": "EMS: OVERDOSE",
+                    "description": "CHURCH RD & BIG RD;  NEW HANOVER; Station 332; 2015-12-12 @ 19:52:36;",
+                    "location": "CHURCH RD & BIG RD",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.0223,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.0744
+                },
+                {
+                    "id": "f7515530-7788-49fe-ae6c-084de8209d40",
+                    "title": "EMS: OVERDOSE",
+                    "description": "MILL CREEK RD & W MONTGOMERY AVE;  LOWER MERION; Station 313; 2015-12-12 @ 16:46:03;",
+                    "location": "MILL CREEK RD & W MONTGOMERY AVE",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.0223,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.0744
+                },
+                {
+                    "id": "753489d4-6beb-4570-a194-7b070235fad7",
+                    "title": "EMS: OVERDOSE",
+                    "description": "PARK LN & VALLEY LN;  LOWER PROVIDENCE; Station 322A; 2015-12-13 @ 00:22:03;",
+                    "location": "PARK LN & VALLEY LN",
+                    "incident_type": "EMS",
+                    "priority_level": null,
+                    "similarity_score": 0.0223,
+                    "word_similarity": 0.0,
+                    "character_similarity": 0.0744
+                }
+            ]
+        }
+    ]
+}
