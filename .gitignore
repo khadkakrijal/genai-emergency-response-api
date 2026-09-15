@@ -2,3 +2,6 @@ venv/
 __pycache__/
 .env
 *.pyc
+datasets/911.csv
+ai/evaluation/train_reference.csv
+ai/evaluation/test_set.csv

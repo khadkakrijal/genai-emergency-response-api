@@ -1,0 +1,477 @@
+{
+    "project": "Advanced Situational Awareness and Intelligence for First Responders using Artificial Intelligence",
+    "evaluation_overview": {
+        "dataset_split": {
+            "full_dataset_records": 663522,
+            "reference_set_records": 530817,
+            "test_set_records": 132705,
+            "reference_percentage": 80,
+            "test_percentage": 20,
+            "split_method": "Stratified random split",
+            "random_state": 42
+        },
+        "baseline_holdout_evaluation": {
+            "sample_size": 150,
+            "samples_per_category": 50,
+            "accuracy": 0.72,
+            "precision": 0.8134,
+            "recall": 0.72,
+            "f1_score": 0.7044,
+            "mean_precision_at_5": 0.72
+        },
+        "retriever_comparison": {
+            "best_configuration": "V3_with_description",
+            "best_metrics": {
+                "accuracy": 0.8933,
+                "precision": 0.895,
+                "recall": 0.8933,
+                "f1_score": 0.8932,
+                "mean_precision_at_5": 0.8547,
+                "incorrect_cases": 16
+            },
+            "all_configurations": {
+                "V1_baseline": {
+                    "accuracy": 0.72,
+                    "precision": 0.8134,
+                    "recall": 0.72,
+                    "f1_score": 0.7044,
+                    "mean_precision_at_5": 0.72,
+                    "incorrect_cases": 42
+                },
+                "V2_title_weighted": {
+                    "accuracy": 0.8867,
+                    "precision": 0.9064,
+                    "recall": 0.8867,
+                    "f1_score": 0.8887,
+                    "mean_precision_at_5": 0.8867,
+                    "incorrect_cases": 17
+                },
+                "V3_with_description": {
+                    "accuracy": 0.8933,
+                    "precision": 0.895,
+                    "recall": 0.8933,
+                    "f1_score": 0.8932,
+                    "mean_precision_at_5": 0.8547,
+                    "incorrect_cases": 16
+                },
+                "V4_title_weighted_description": {
+                    "accuracy": 0.86,
+                    "precision": 0.8626,
+                    "recall": 0.86,
+                    "f1_score": 0.8609,
+                    "mean_precision_at_5": 0.82,
+                    "incorrect_cases": 21
+                }
+            }
+        },
+        "threshold_evaluation": {
+            "retriever_configuration": "V3_with_description",
+            "thresholds_tested": [
+                0.5,
+                0.6,
+                0.65,
+                0.7,
+                0.75,
+                0.8
+            ],
+            "selected_threshold": 0.5,
+            "selected_threshold_metrics": {
+                "threshold": 0.5,
+                "answered_cases": 134,
+                "human_review_cases": 16,
+                "coverage": 0.8933,
+                "human_review_rate": 0.1067,
+                "accuracy_on_answered_cases": 0.903,
+                "precision_on_answered_cases": 0.9052,
+                "recall_on_answered_cases": 0.903,
+                "f1_on_answered_cases": 0.9029,
+                "correct_answered_cases": 121,
+                "false_accepts": 13,
+                "false_accept_rate": 0.0867,
+                "false_rejects": 13,
+                "false_reject_rate": 0.0867,
+                "selection_score": 0.8066
+            },
+            "all_threshold_results": [
+                {
+                    "threshold": 0.5,
+                    "answered_cases": 134,
+                    "human_review_cases": 16,
+                    "coverage": 0.8933,
+                    "human_review_rate": 0.1067,
+                    "accuracy_on_answered_cases": 0.903,
+                    "precision_on_answered_cases": 0.9052,
+                    "recall_on_answered_cases": 0.903,
+                    "f1_on_answered_cases": 0.9029,
+                    "correct_answered_cases": 121,
+                    "false_accepts": 13,
+                    "false_accept_rate": 0.0867,
+                    "false_rejects": 13,
+                    "false_reject_rate": 0.0867,
+                    "selection_score": 0.8066
+                },
+                {
+                    "threshold": 0.6,
+                    "answered_cases": 79,
+                    "human_review_cases": 71,
+                    "coverage": 0.5267,
+                    "human_review_rate": 0.4733,
+                    "accuracy_on_answered_cases": 0.9114,
+                    "precision_on_answered_cases": 0.9161,
+                    "recall_on_answered_cases": 0.9114,
+                    "f1_on_answered_cases": 0.9121,
+                    "correct_answered_cases": 72,
+                    "false_accepts": 7,
+                    "false_accept_rate": 0.0467,
+                    "false_rejects": 62,
+                    "false_reject_rate": 0.4133,
+                    "selection_score": 0.4804
+                },
+                {
+                    "threshold": 0.65,
+                    "answered_cases": 44,
+                    "human_review_cases": 106,
+                    "coverage": 0.2933,
+                    "human_review_rate": 0.7067,
+                    "accuracy_on_answered_cases": 0.8864,
+                    "precision_on_answered_cases": 0.8955,
+                    "recall_on_answered_cases": 0.8864,
+                    "f1_on_answered_cases": 0.8877,
+                    "correct_answered_cases": 39,
+                    "false_accepts": 5,
+                    "false_accept_rate": 0.0333,
+                    "false_rejects": 95,
+                    "false_reject_rate": 0.6333,
+                    "selection_score": 0.2604
+                },
+                {
+                    "threshold": 0.7,
+                    "answered_cases": 21,
+                    "human_review_cases": 129,
+                    "coverage": 0.14,
+                    "human_review_rate": 0.86,
+                    "accuracy_on_answered_cases": 0.8571,
+                    "precision_on_answered_cases": 0.8745,
+                    "recall_on_answered_cases": 0.8571,
+                    "f1_on_answered_cases": 0.8381,
+                    "correct_answered_cases": 18,
+                    "false_accepts": 3,
+                    "false_accept_rate": 0.02,
+                    "false_rejects": 116,
+                    "false_reject_rate": 0.7733,
+                    "selection_score": 0.1173
+                },
+                {
+                    "threshold": 0.75,
+                    "answered_cases": 9,
+                    "human_review_cases": 141,
+                    "coverage": 0.06,
+                    "human_review_rate": 0.94,
+                    "accuracy_on_answered_cases": 0.8889,
+                    "precision_on_answered_cases": 0.9111,
+                    "recall_on_answered_cases": 0.8889,
+                    "f1_on_answered_cases": 0.8889,
+                    "correct_answered_cases": 8,
+                    "false_accepts": 1,
+                    "false_accept_rate": 0.0067,
+                    "false_rejects": 126,
+                    "false_reject_rate": 0.84,
+                    "selection_score": 0.0533
+                },
+                {
+                    "threshold": 0.8,
+                    "answered_cases": 3,
+                    "human_review_cases": 147,
+                    "coverage": 0.02,
+                    "human_review_rate": 0.98,
+                    "accuracy_on_answered_cases": 1.0,
+                    "precision_on_answered_cases": 1.0,
+                    "recall_on_answered_cases": 1.0,
+                    "f1_on_answered_cases": 1.0,
+                    "correct_answered_cases": 3,
+                    "false_accepts": 0,
+                    "false_accept_rate": 0.0,
+                    "false_rejects": 131,
+                    "false_reject_rate": 0.8733,
+                    "selection_score": 0.02
+                }
+            ]
+        },
+        "clustering_evaluation": {
+            "sample_size": 3000,
+            "samples_per_category": 1000,
+            "svd_components": 100,
+            "svd_explained_variance": 0.3282,
+            "best_silhouette": {
+                "k": 6,
+                "score": 0.1095
+            },
+            "best_davies_bouldin": {
+                "k": 3,
+                "score": 2.5594
+            },
+            "best_calinski_harabasz": {
+                "k": 2,
+                "score": 243.0799
+            },
+            "all_results": [
+                {
+                    "k": 2,
+                    "silhouette_score": 0.0592,
+                    "davies_bouldin_index": 2.8651,
+                    "calinski_harabasz_index": 243.0799,
+                    "cluster_composition": {
+                        "0": {
+                            "size": 2244,
+                            "categories": {
+                                "EMS": 1000,
+                                "Fire": 909,
+                                "Traffic": 335
+                            }
+                        },
+                        "1": {
+                            "size": 756,
+                            "categories": {
+                                "Traffic": 665,
+                                "Fire": 91
+                            }
+                        }
+                    }
+                },
+                {
+                    "k": 3,
+                    "silhouette_score": 0.0754,
+                    "davies_bouldin_index": 2.5594,
+                    "calinski_harabasz_index": 199.3201,
+                    "cluster_composition": {
+                        "0": {
+                            "size": 2009,
+                            "categories": {
+                                "EMS": 1000,
+                                "Fire": 890,
+                                "Traffic": 119
+                            }
+                        },
+                        "1": {
+                            "size": 209,
+                            "categories": {
+                                "Traffic": 209
+                            }
+                        },
+                        "2": {
+                            "size": 782,
+                            "categories": {
+                                "Traffic": 672,
+                                "Fire": 110
+                            }
+                        }
+                    }
+                },
+                {
+                    "k": 4,
+                    "silhouette_score": 0.0894,
+                    "davies_bouldin_index": 3.6026,
+                    "calinski_harabasz_index": 169.4777,
+                    "cluster_composition": {
+                        "0": {
+                            "size": 1006,
+                            "categories": {
+                                "Fire": 886,
+                                "Traffic": 118,
+                                "EMS": 2
+                            }
+                        },
+                        "1": {
+                            "size": 787,
+                            "categories": {
+                                "Traffic": 673,
+                                "Fire": 114
+                            }
+                        },
+                        "2": {
+                            "size": 998,
+                            "categories": {
+                                "EMS": 998
+                            }
+                        },
+                        "3": {
+                            "size": 209,
+                            "categories": {
+                                "Traffic": 209
+                            }
+                        }
+                    }
+                },
+                {
+                    "k": 5,
+                    "silhouette_score": 0.0944,
+                    "davies_bouldin_index": 3.1334,
+                    "calinski_harabasz_index": 151.2778,
+                    "cluster_composition": {
+                        "0": {
+                            "size": 1342,
+                            "categories": {
+                                "EMS": 758,
+                                "Fire": 556,
+                                "Traffic": 28
+                            }
+                        },
+                        "1": {
+                            "size": 731,
+                            "categories": {
+                                "Traffic": 657,
+                                "Fire": 74
+                            }
+                        },
+                        "2": {
+                            "size": 370,
+                            "categories": {
+                                "Fire": 370
+                            }
+                        },
+                        "3": {
+                            "size": 242,
+                            "categories": {
+                                "EMS": 242
+                            }
+                        },
+                        "4": {
+                            "size": 315,
+                            "categories": {
+                                "Traffic": 315
+                            }
+                        }
+                    }
+                },
+                {
+                    "k": 6,
+                    "silhouette_score": 0.1095,
+                    "davies_bouldin_index": 2.651,
+                    "calinski_harabasz_index": 142.2222,
+                    "cluster_composition": {
+                        "0": {
+                            "size": 209,
+                            "categories": {
+                                "Traffic": 209
+                            }
+                        },
+                        "1": {
+                            "size": 370,
+                            "categories": {
+                                "Fire": 370
+                            }
+                        },
+                        "2": {
+                            "size": 786,
+                            "categories": {
+                                "Traffic": 673,
+                                "Fire": 113
+                            }
+                        },
+                        "3": {
+                            "size": 111,
+                            "categories": {
+                                "EMS": 111
+                            }
+                        },
+                        "4": {
+                            "size": 117,
+                            "categories": {
+                                "Traffic": 117
+                            }
+                        },
+                        "5": {
+                            "size": 1407,
+                            "categories": {
+                                "EMS": 889,
+                                "Fire": 517,
+                                "Traffic": 1
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "llm_prompt_evaluation": {
+            "test_cases": 30,
+            "best_prompt": "A_BASIC",
+            "prompt_metrics": {
+                "A_BASIC": {
+                    "accuracy": 0.9667,
+                    "precision": 0.9697,
+                    "recall": 0.9667,
+                    "f1_score": 0.9666
+                },
+                "B_RAG": {
+                    "accuracy": 0.9,
+                    "precision": 0.9024,
+                    "recall": 0.9,
+                    "f1_score": 0.8997
+                },
+                "C_RAG_GUARDRAIL": {
+                    "accuracy": 0.9333,
+                    "precision": 0.9444,
+                    "recall": 0.9333,
+                    "f1_score": 0.9327
+                }
+            },
+            "prompt_descriptions": {
+                "A_BASIC": "Current incident only",
+                "B_RAG": "Current incident plus RAG context",
+                "C_RAG_GUARDRAIL": "Current incident plus RAG, structured guidance and anti-hallucination guardrails"
+            }
+        },
+        "hallucination_evaluation": {
+            "test_cases": 12,
+            "best_safety_prompt": "A_BASIC",
+            "prompt_metrics": {
+                "A_BASIC": {
+                    "hallucinations": 1,
+                    "hallucination_rate": 0.0833,
+                    "grounded_responses": 11,
+                    "grounded_response_rate": 0.9167,
+                    "correct_uncertainty_decisions": 9,
+                    "uncertainty_accuracy": 0.75
+                },
+                "B_RAG": {
+                    "hallucinations": 2,
+                    "hallucination_rate": 0.1667,
+                    "grounded_responses": 10,
+                    "grounded_response_rate": 0.8333,
+                    "correct_uncertainty_decisions": 7,
+                    "uncertainty_accuracy": 0.5833
+                },
+                "C_RAG_GUARDRAIL": {
+                    "hallucinations": 3,
+                    "hallucination_rate": 0.25,
+                    "grounded_responses": 9,
+                    "grounded_response_rate": 0.75,
+                    "correct_uncertainty_decisions": 8,
+                    "uncertainty_accuracy": 0.6667
+                }
+            }
+        }
+    },
+    "key_findings": {
+        "baseline_accuracy": 0.72,
+        "baseline_f1": 0.7044,
+        "best_retriever": "V3_with_description",
+        "best_retriever_accuracy": 0.8933,
+        "best_retriever_f1": 0.8932,
+        "selected_similarity_threshold": 0.5,
+        "best_clustering_silhouette": {
+            "k": 6,
+            "score": 0.1095
+        },
+        "best_clustering_dbi": {
+            "k": 3,
+            "score": 2.5594
+        },
+        "best_clustering_chi": {
+            "k": 2,
+            "score": 243.0799
+        },
+        "best_classification_prompt": "A_BASIC",
+        "best_safety_prompt": "A_BASIC"
+    }
+}

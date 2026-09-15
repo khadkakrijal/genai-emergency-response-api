@@ -1,0 +1,64 @@
+Experiment,Metric,Value
+Dataset Split,Reference Set,530817
+Dataset Split,Test Set,132705
+Baseline Holdout,accuracy,0.72
+Baseline Holdout,precision,0.8134
+Baseline Holdout,recall,0.72
+Baseline Holdout,f1_score,0.7044
+Baseline Holdout,mean_precision_at_5,0.72
+Best Retriever - V3_with_description,accuracy,0.8933
+Best Retriever - V3_with_description,precision,0.895
+Best Retriever - V3_with_description,recall,0.8933
+Best Retriever - V3_with_description,f1_score,0.8932
+Best Retriever - V3_with_description,mean_precision_at_5,0.8547
+Best Retriever - V3_with_description,incorrect_cases,16
+Threshold Evaluation,selected_threshold,0.5
+Threshold Evaluation,threshold,0.5
+Threshold Evaluation,answered_cases,134
+Threshold Evaluation,human_review_cases,16
+Threshold Evaluation,coverage,0.8933
+Threshold Evaluation,human_review_rate,0.1067
+Threshold Evaluation,accuracy_on_answered_cases,0.903
+Threshold Evaluation,precision_on_answered_cases,0.9052
+Threshold Evaluation,recall_on_answered_cases,0.903
+Threshold Evaluation,f1_on_answered_cases,0.9029
+Threshold Evaluation,correct_answered_cases,121
+Threshold Evaluation,false_accepts,13
+Threshold Evaluation,false_accept_rate,0.0867
+Threshold Evaluation,false_rejects,13
+Threshold Evaluation,false_reject_rate,0.0867
+Threshold Evaluation,selection_score,0.8066
+Clustering,SVD explained variance,0.3282
+Clustering,Best Silhouette,"{'k': 6, 'score': 0.1095}"
+Clustering,Best DBI,"{'k': 3, 'score': 2.5594}"
+Clustering,Best CHI,"{'k': 2, 'score': 243.0799}"
+LLM Prompt - A_BASIC,accuracy,0.9667
+LLM Prompt - A_BASIC,precision,0.9697
+LLM Prompt - A_BASIC,recall,0.9667
+LLM Prompt - A_BASIC,f1_score,0.9666
+LLM Prompt - B_RAG,accuracy,0.9
+LLM Prompt - B_RAG,precision,0.9024
+LLM Prompt - B_RAG,recall,0.9
+LLM Prompt - B_RAG,f1_score,0.8997
+LLM Prompt - C_RAG_GUARDRAIL,accuracy,0.9333
+LLM Prompt - C_RAG_GUARDRAIL,precision,0.9444
+LLM Prompt - C_RAG_GUARDRAIL,recall,0.9333
+LLM Prompt - C_RAG_GUARDRAIL,f1_score,0.9327
+Hallucination - A_BASIC,hallucinations,1
+Hallucination - A_BASIC,hallucination_rate,0.0833
+Hallucination - A_BASIC,grounded_responses,11
+Hallucination - A_BASIC,grounded_response_rate,0.9167
+Hallucination - A_BASIC,correct_uncertainty_decisions,9
+Hallucination - A_BASIC,uncertainty_accuracy,0.75
+Hallucination - B_RAG,hallucinations,2
+Hallucination - B_RAG,hallucination_rate,0.1667
+Hallucination - B_RAG,grounded_responses,10
+Hallucination - B_RAG,grounded_response_rate,0.8333
+Hallucination - B_RAG,correct_uncertainty_decisions,7
+Hallucination - B_RAG,uncertainty_accuracy,0.5833
+Hallucination - C_RAG_GUARDRAIL,hallucinations,3
+Hallucination - C_RAG_GUARDRAIL,hallucination_rate,0.25
+Hallucination - C_RAG_GUARDRAIL,grounded_responses,9
+Hallucination - C_RAG_GUARDRAIL,grounded_response_rate,0.75
+Hallucination - C_RAG_GUARDRAIL,correct_uncertainty_decisions,8
+Hallucination - C_RAG_GUARDRAIL,uncertainty_accuracy,0.6667

@@ -1,0 +1,208 @@
+{
+    "experiment": "TF-IDF clustering evaluation",
+    "reference_source": "80% training/reference set",
+    "retrieval_configuration": "V3_with_description",
+    "sample_size": 3000,
+    "samples_per_category": 1000,
+    "svd_components": 100,
+    "svd_explained_variance": 0.3282,
+    "random_state": 42,
+    "cluster_counts_tested": [
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "results": [
+        {
+            "k": 2,
+            "silhouette_score": 0.0592,
+            "davies_bouldin_index": 2.8651,
+            "calinski_harabasz_index": 243.0799,
+            "cluster_composition": {
+                "0": {
+                    "size": 2244,
+                    "categories": {
+                        "EMS": 1000,
+                        "Fire": 909,
+                        "Traffic": 335
+                    }
+                },
+                "1": {
+                    "size": 756,
+                    "categories": {
+                        "Traffic": 665,
+                        "Fire": 91
+                    }
+                }
+            }
+        },
+        {
+            "k": 3,
+            "silhouette_score": 0.0754,
+            "davies_bouldin_index": 2.5594,
+            "calinski_harabasz_index": 199.3201,
+            "cluster_composition": {
+                "0": {
+                    "size": 2009,
+                    "categories": {
+                        "EMS": 1000,
+                        "Fire": 890,
+                        "Traffic": 119
+                    }
+                },
+                "1": {
+                    "size": 209,
+                    "categories": {
+                        "Traffic": 209
+                    }
+                },
+                "2": {
+                    "size": 782,
+                    "categories": {
+                        "Traffic": 672,
+                        "Fire": 110
+                    }
+                }
+            }
+        },
+        {
+            "k": 4,
+            "silhouette_score": 0.0894,
+            "davies_bouldin_index": 3.6026,
+            "calinski_harabasz_index": 169.4777,
+            "cluster_composition": {
+                "0": {
+                    "size": 1006,
+                    "categories": {
+                        "Fire": 886,
+                        "Traffic": 118,
+                        "EMS": 2
+                    }
+                },
+                "1": {
+                    "size": 787,
+                    "categories": {
+                        "Traffic": 673,
+                        "Fire": 114
+                    }
+                },
+                "2": {
+                    "size": 998,
+                    "categories": {
+                        "EMS": 998
+                    }
+                },
+                "3": {
+                    "size": 209,
+                    "categories": {
+                        "Traffic": 209
+                    }
+                }
+            }
+        },
+        {
+            "k": 5,
+            "silhouette_score": 0.0944,
+            "davies_bouldin_index": 3.1334,
+            "calinski_harabasz_index": 151.2778,
+            "cluster_composition": {
+                "0": {
+                    "size": 1342,
+                    "categories": {
+                        "EMS": 758,
+                        "Fire": 556,
+                        "Traffic": 28
+                    }
+                },
+                "1": {
+                    "size": 731,
+                    "categories": {
+                        "Traffic": 657,
+                        "Fire": 74
+                    }
+                },
+                "2": {
+                    "size": 370,
+                    "categories": {
+                        "Fire": 370
+                    }
+                },
+                "3": {
+                    "size": 242,
+                    "categories": {
+                        "EMS": 242
+                    }
+                },
+                "4": {
+                    "size": 315,
+                    "categories": {
+                        "Traffic": 315
+                    }
+                }
+            }
+        },
+        {
+            "k": 6,
+            "silhouette_score": 0.1095,
+            "davies_bouldin_index": 2.651,
+            "calinski_harabasz_index": 142.2222,
+            "cluster_composition": {
+                "0": {
+                    "size": 209,
+                    "categories": {
+                        "Traffic": 209
+                    }
+                },
+                "1": {
+                    "size": 370,
+                    "categories": {
+                        "Fire": 370
+                    }
+                },
+                "2": {
+                    "size": 786,
+                    "categories": {
+                        "Traffic": 673,
+                        "Fire": 113
+                    }
+                },
+                "3": {
+                    "size": 111,
+                    "categories": {
+                        "EMS": 111
+                    }
+                },
+                "4": {
+                    "size": 117,
+                    "categories": {
+                        "Traffic": 117
+                    }
+                },
+                "5": {
+                    "size": 1407,
+                    "categories": {
+                        "EMS": 889,
+                        "Fire": 517,
+                        "Traffic": 1
+                    }
+                }
+            }
+        }
+    ],
+    "best_results": {
+        "best_silhouette": {
+            "k": 6,
+            "score": 0.1095
+        },
+        "best_davies_bouldin": {
+            "k": 3,
+            "score": 2.5594
+        },
+        "best_calinski_harabasz": {
+            "k": 2,
+            "score": 243.0799
+        }
+    }
+}

@@ -15,7 +15,7 @@ def generate_with_ollama(prompt: str, model: str = "llama3.2"):
         client = Groq(api_key=api_key)
 
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
             messages=[
                 {
                     "role": "system",

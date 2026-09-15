@@ -1,0 +1,3679 @@
+{
+    "evaluation": {
+        "type": "80_20_holdout",
+        "reference_set": "80%",
+        "test_set": "20%",
+        "sample_size": 150,
+        "samples_per_category": 50,
+        "top_k": 5,
+        "random_state": 42
+    },
+    "classification_metrics": {
+        "accuracy": 0.72,
+        "precision": 0.8134,
+        "recall": 0.72,
+        "f1_score": 0.7044
+    },
+    "retrieval_metrics": {
+        "mean_precision_at_5": 0.72
+    },
+    "per_class_metrics": {
+        "EMS": {
+            "precision": 1.0,
+            "recall": 0.86,
+            "f1-score": 0.9247311827956989,
+            "support": 50.0
+        },
+        "Traffic": {
+            "precision": 0.8947368421052632,
+            "recall": 0.34,
+            "f1-score": 0.4927536231884058,
+            "support": 50.0
+        },
+        "Fire": {
+            "precision": 0.5454545454545454,
+            "recall": 0.96,
+            "f1-score": 0.6956521739130435,
+            "support": 50.0
+        },
+        "accuracy": 0.72,
+        "macro avg": {
+            "precision": 0.8133971291866029,
+            "recall": 0.7200000000000001,
+            "f1-score": 0.7043789932990494,
+            "support": 150.0
+        },
+        "weighted avg": {
+            "precision": 0.8133971291866028,
+            "recall": 0.72,
+            "f1-score": 0.7043789932990494,
+            "support": 150.0
+        }
+    },
+    "confusion_matrix": {
+        "labels": [
+            "EMS",
+            "Traffic",
+            "Fire"
+        ],
+        "matrix": [
+            [
+                43,
+                0,
+                7
+            ],
+            [
+                0,
+                17,
+                33
+            ],
+            [
+                0,
+                2,
+                48
+            ]
+        ]
+    },
+    "results": [
+        {
+            "test_number": 1,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - COWPATH RD & MININGER RD; FRANCONIA; 2017-07-05 @ 15:55:51;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 2,
+            "original_title": "EMS: SUBJECT IN PAIN",
+            "query": "SUBJECT IN PAIN MARSHALL ST & N MONTGOMERY AVE;  WEST NORRITON; Station 308B; 2019-06-06 @ 09:13:43;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7501,
+            "top_5_titles": [
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 3,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION COBBLER CT & QUINCE DR; FRANCONIA; 2019-11-20 @ 08:37:04-Station:STA75;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 4,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - RAMP MATSONFORD RD TO I476  & RAMP MATSONFORD RD TO I76 WB; WEST CONSHOHOCKEN; 2018-02-24 @ 14:06:34;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 5,
+            "original_title": "Traffic: ROAD OBSTRUCTION -",
+            "query": "ROAD OBSTRUCTION - RT309 EXPY & RAMP RT309 SB TO I276; UPPER DUBLIN; 2017-07-06 @ 08:45:30;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7467,
+            "top_5_titles": [
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 6,
+            "original_title": "EMS: HEMORRHAGING",
+            "query": "HEMORRHAGING EDGEWOOD AVE & PATANE AVE;  ABINGTON; Station 381; 2019-02-14 @ 01:21:00;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.5655,
+            "top_5_titles": [
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 7,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - RT202 PKWY & RT309 CONNECTOR RAMP; MONTGOMERY; 2016-08-02 @ 14:47:25;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 8,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION LONGFORD RD & PORT PROVIDENCE RD; UPPER PROVIDENCE; 2019-11-02 @ 04:04:25-Station:STA99;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 9,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - EGYPT RD & S TROOPER RD; WEST NORRITON; 2017-02-18 @ 10:32:31;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 10,
+            "original_title": "Traffic: HAZARDOUS ROAD CONDITIONS -",
+            "query": "HAZARDOUS ROAD CONDITIONS - OLD WELSH RD & CLEVELAND AVE; ABINGTON; 2019-01-21 @ 15:00:02;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.822,
+            "top_5_titles": [
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 11,
+            "original_title": "Fire: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT COLONIAL AVE; FRANCONIA; 2017-07-06 @ 16:32:09-Station:STA74;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 12,
+            "original_title": "EMS: CARDIAC EMERGENCY",
+            "query": "CARDIAC EMERGENCY WOODS END CT & HILLVIEW DR;  UPPER PROVIDENCE; Station 3A85; 2020-05-02 @ 13:41:44;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.5319,
+            "top_5_titles": [
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 13,
+            "original_title": "EMS: CHOKING",
+            "query": "CHOKING CITY AVE & GOLF RD;  LOWER MERION; Station 313; 2016-07-17 @ 14:29:13;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.5708,
+            "top_5_titles": [
+                "EMS: CHOKING",
+                "EMS: CHOKING",
+                "EMS: CHOKING",
+                "EMS: CHOKING",
+                "EMS: CHOKING"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 14,
+            "original_title": "EMS: FALL VICTIM",
+            "query": "FALL VICTIM FRANKLIN ST & E HANCOCK ST;  LANSDALE; Station 345; 2019-07-28 @ 04:42:27;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 15,
+            "original_title": "EMS: RESPIRATORY EMERGENCY",
+            "query": "RESPIRATORY EMERGENCY 7TH AVE & FORREST ST;  CONSHOHOCKEN; Station 313A; 2017-12-04 @ 21:43:02;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 16,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - SCHUYLKILL EXPY & WEADLEY RD OVERPASS; UPPER MERION; 2016-03-03 @ 09:26:02;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 17,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM ASHBOURNE RD & HOPELAND RD; CHELTENHAM; 2018-01-04 @ 13:10:43-Station:STA2;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 18,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - TOMLINSON RD & PHILMONT AVE; LOWER MORELAND; 2019-05-09 @ 16:06:33;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 19,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - HIGH ST & ARMAND HAMMER BLVD; POTTSTOWN; 2019-01-22 @ 07:24:16;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 20,
+            "original_title": "Fire: UNKNOWN TYPE FIRE",
+            "query": "UNKNOWN TYPE FIRE LANCASTER AVE & ARDMORE AVE; LOWER MERION; 2017-05-17 @ 10:54:02-Station:STA25;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.8916,
+            "top_5_titles": [
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 21,
+            "original_title": "EMS: CARDIAC EMERGENCY",
+            "query": "CARDIAC EMERGENCY MARSHALL ST & CORSON ST;  NORRISTOWN; Station 308A; 2017-09-19 @ 21:21:55;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7685,
+            "top_5_titles": [
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 22,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION ROSE GLEN RD & MAPLEHILL RD; LOWER MERION; 2019-01-29 @ 15:12:55-Station:STA24;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 23,
+            "original_title": "EMS: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT COUNTY LINE RD;  DELAWARE COUNTY; Station EMS; 2019-08-04 @ 14:55:42;",
+            "expected_category": "EMS",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6188,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 24,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM ST GEORGES RD & COULTER AVE; LOWER MERION; 2017-08-29 @ 12:30:00-Station:STA25;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 25,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM MT VERNON ST & SUSQUEHANNA AVE; LANSDALE; 2017-08-15 @ 00:12:23-Station:STA14;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 26,
+            "original_title": "Fire: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT FITZWATERTOWN RD; UPPER MORELAND; 2019-07-06 @ 11:59:07-Station:STA10;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 27,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION GREENWOOD AVE; CHELTENHAM; 2019-11-11 @ 12:54:23-Station:STA1;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 28,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION DONALD DR & WILLOW BROOK LN; NEW HANOVER; 2017-05-17 @ 14:46:14-Station:STA37;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 29,
+            "original_title": "EMS: FALL VICTIM",
+            "query": "FALL VICTIM SHANNONDELL DR & SHANNONDELL BLVD;  LOWER PROVIDENCE; Station 322A; 2019-03-31 @ 15:29:11;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 30,
+            "original_title": "EMS: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT SHOEMAKER RD;  POTTSTOWN; Station 329; 2018-06-01 @ 10:01:49;",
+            "expected_category": "EMS",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 31,
+            "original_title": "EMS: EMS SPECIAL SERVICE",
+            "query": "EMS SPECIAL SERVICE TOMLINSON RD;  BRYN ATHYN; Station 355; 2019-09-07 @ 12:53:31;",
+            "expected_category": "EMS",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.9096,
+            "top_5_titles": [
+                "Fire: EMS SPECIAL SERVICE",
+                "Fire: EMS SPECIAL SERVICE",
+                "Fire: EMS SPECIAL SERVICE",
+                "Fire: EMS SPECIAL SERVICE",
+                "Fire: EMS SPECIAL SERVICE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 32,
+            "original_title": "EMS: RESPIRATORY EMERGENCY",
+            "query": "RESPIRATORY EMERGENCY CROSSFIELD RD & JAMES ST;  UPPER MERION; Station 317; 2018-12-17 @ 07:21:37;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 33,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - DISCOVERY DR & WALNUT ST; HATFIELD TOWNSHIP; 2019-10-04 @ 17:33:14;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 34,
+            "original_title": "EMS: SEIZURES",
+            "query": "SEIZURES HOLLY DR & DOGWOOD LN;  WEST POTTSGROVE; Station 329; 2016-04-27 @ 21:43:20;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.5642,
+            "top_5_titles": [
+                "EMS: SEIZURES",
+                "EMS: SEIZURES",
+                "EMS: SEIZURES",
+                "EMS: SEIZURES",
+                "EMS: SEIZURES"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 35,
+            "original_title": "EMS: RESPIRATORY EMERGENCY",
+            "query": "RESPIRATORY EMERGENCY 4TH ST & ERIE AVE;  TELFORD; Station 339; 2019-03-21 @ 04:44:11;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 36,
+            "original_title": "Fire: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT RIDGE PIKE & RUPERT RD; LIMERICK; 2018-03-28 @ 11:23:48-Station:STA54;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 37,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - MARKLEY ST & W AIRY ST; NORRISTOWN; 2017-04-16 @ 07:56:45;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 38,
+            "original_title": "EMS: BACK PAINS/INJURY",
+            "query": "BACK PAINS/INJURY FORNANCE ST & GREEN ST;  NORRISTOWN; Station 308A; 2016-07-16 @ 05:21:04;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7576,
+            "top_5_titles": [
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 39,
+            "original_title": "EMS: HEAD INJURY",
+            "query": "HEAD INJURY PENNSWOOD RD & NEW GULPH RD;  LOWER MERION; Station 313; 2017-09-24 @ 11:10:44;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7635,
+            "top_5_titles": [
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 40,
+            "original_title": "EMS: SUBJECT IN PAIN",
+            "query": "SUBJECT IN PAIN MILL RD & GOLF CART DR;  WEST NORRITON; Station 308B; 2018-07-09 @ 14:57:29;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7501,
+            "top_5_titles": [
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 41,
+            "original_title": "Fire: ELECTRICAL FIRE OUTSIDE",
+            "query": "ELECTRICAL FIRE OUTSIDE CRESHEIM VALLEY DR & STENTON AVE; SPRINGFIELD; 2019-02-01 @ 07:23:46-Station:STA82;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.9063,
+            "top_5_titles": [
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 42,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - SUMNEYTOWN PIKE & TOWAMENCIN AVE; TOWAMENCIN; 2016-12-06 @ 09:55:16;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 43,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - GERMANTOWN PIKE & MILL RD; EAST NORRITON; 2017-11-11 @ 17:17:44;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 44,
+            "original_title": "EMS: FALL VICTIM",
+            "query": "FALL VICTIM WHITE PINE LN & N CHARLOTTE ST;  LOWER POTTSGROVE; Station 329B; 2018-10-04 @ 09:59:33;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 45,
+            "original_title": "EMS: HEMORRHAGING",
+            "query": "HEMORRHAGING CAMP HILL RD & OFFICE CENTER DR;  UPPER DUBLIN; Station 351; 2018-04-04 @ 13:02:03;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.5655,
+            "top_5_titles": [
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING",
+                "EMS: HEMORRHAGING"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 46,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - S TROOPER RD & STINSON LN; WEST NORRITON; 2016-02-03 @ 15:23:42;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 47,
+            "original_title": "Fire: APPLIANCE FIRE",
+            "query": "APPLIANCE FIRE KLEMAN RD & GAIL DR; NEW HANOVER; 2017-05-22 @ 18:21:42-Station:STA37;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7767,
+            "top_5_titles": [
+                "Fire: APPLIANCE FIRE",
+                "Fire: APPLIANCE FIRE",
+                "Fire: APPLIANCE FIRE",
+                "Fire: APPLIANCE FIRE",
+                "Fire: APPLIANCE FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 48,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION MAGNOLIA AVE & ELM AVE; ABINGTON; 2019-05-18 @ 16:48:18-Station:STA400;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 49,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - HIGHLAND AVE & JENKINTOWN RD; ABINGTON; 2016-09-07 @ 17:52:42;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 50,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM WALNUT ST & S 4TH AVE; ROYERSFORD; 2017-06-28 @ 08:08:45-Station:STA98;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 51,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - RT309 EXPY NB & RAMP RT309 NB TO NORRISTOWN RD; LOWER GWYNEDD; 2019-02-12 @ 09:41:12;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 52,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM CHARLOTTE ST & LEE AVE; POTTSTOWN; 2016-07-26 @ 11:47:56-Station:STA69;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 53,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - RT309 EXPY & RAMP SUSQUEHANNA RD TO RT309 SB; UPPER DUBLIN; 2016-09-27 @ 07:27:52;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 54,
+            "original_title": "EMS: MEDICAL ALERT ALARM",
+            "query": "MEDICAL ALERT ALARM BASIN ST & GREENVALLEY RD;  NORRISTOWN; Station 308A; 2018-06-05 @ 19:48:16;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.8306,
+            "top_5_titles": [
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 55,
+            "original_title": "Fire: GAS-ODOR/LEAK",
+            "query": "GAS-ODOR/LEAK SHOEMAKER RD & ROBINSON ST; POTTSTOWN; 2016-05-23 @ 18:11:52-Station:STA69;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.9399,
+            "top_5_titles": [
+                "Fire: GAS-ODOR/LEAK",
+                "Fire: GAS-ODOR/LEAK",
+                "Fire: GAS-ODOR/LEAK",
+                "Fire: GAS-ODOR/LEAK",
+                "Fire: GAS-ODOR/LEAK"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 56,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - RT422 BYP & RAMP RT422 EB TO ARMAND HAMMER BLVD; LOWER POTTSGROVE; 2018-03-03 @ 19:54:50;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 57,
+            "original_title": "EMS: ABDOMINAL PAINS",
+            "query": "ABDOMINAL PAINS NORTH LN & ARCHBISHOP DR;  PLYMOUTH; Station 308; 2016-10-02 @ 18:21:47;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.756,
+            "top_5_titles": [
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 58,
+            "original_title": "EMS: ABDOMINAL PAINS",
+            "query": "ABDOMINAL PAINS GODDARD BLVD & VALLEY GREEN LN;  UPPER MERION; Station 317; 2018-10-20 @ 18:13:06;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.756,
+            "top_5_titles": [
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 59,
+            "original_title": "EMS: FALL VICTIM",
+            "query": "FALL VICTIM NORRISTOWN RD & TENNIS AVE;  LOWER GWYNEDD; Station 351; 2018-06-05 @ 01:23:37;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 60,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - SWAMP PIKE & FRUITVILLE RD; LIMERICK; 2017-09-08 @ 16:00:20;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 61,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM FREEDOM DR & N GULPH RD; UPPER MERION; 2016-07-13 @ 17:59:24-Station:STA47;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 62,
+            "original_title": "EMS: DEHYDRATION",
+            "query": "DEHYDRATION KAREN LN & DAVISVILLE RD;  UPPER MORELAND; Station 384; 2016-08-25 @ 22:04:29;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.5704,
+            "top_5_titles": [
+                "EMS: DEHYDRATION",
+                "EMS: DEHYDRATION",
+                "EMS: DEHYDRATION",
+                "EMS: DEHYDRATION",
+                "EMS: DEHYDRATION"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 63,
+            "original_title": "EMS: ABDOMINAL PAINS",
+            "query": "ABDOMINAL PAINS CAMPBELL RD & GRABER RD;  MARLBOROUGH; Station 344A; 2016-08-21 @ 21:46:38;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.756,
+            "top_5_titles": [
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 64,
+            "original_title": "EMS: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT DEKALB PIKE;  EAST NORRITON; Station 308; 2017-11-08 @ 23:38:32;",
+            "expected_category": "EMS",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 65,
+            "original_title": "Traffic: HAZARDOUS ROAD CONDITIONS -",
+            "query": "HAZARDOUS ROAD CONDITIONS - HOLME AVE & MAYFIELD AVE; ABINGTON; 2019-10-11 @ 12:46:01;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.822,
+            "top_5_titles": [
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -",
+                "Traffic: HAZARDOUS ROAD CONDITIONS -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 66,
+            "original_title": "EMS: SUBJECT IN PAIN",
+            "query": "SUBJECT IN PAIN CHESTNUT ST & POTTS DR;  POTTSTOWN; Station 329; 2019-09-23 @ 03:05:26;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7501,
+            "top_5_titles": [
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 67,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - RIVER CREST DR & S COLLEGEVILLE RD; UPPER PROVIDENCE; 2018-11-30 @ 08:38:00;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 68,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION MERWYN RD & DEAD END; LOWER MERION; 2018-03-02 @ 16:06:22-Station:STA26;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 69,
+            "original_title": "EMS: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT INDIAN CREEK RD & FREEMAN SCHOOL RD;  LOWER SALFORD; Station 344; 2019-08-30 @ 08:46:01;",
+            "expected_category": "EMS",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 70,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - E COUNTY LINE RD & N WARMINSTER RD; HATBORO; 2019-03-22 @ 08:36:14;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 71,
+            "original_title": "Fire: VEHICLE FIRE",
+            "query": "VEHICLE FIRE ARCH ST; NORRISTOWN; 2019-01-02 @ 18:54:09-Station:STA27;",
+            "expected_category": "Fire",
+            "predicted_category": "Traffic",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.3787,
+            "top_5_titles": [
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 72,
+            "original_title": "EMS: FALL VICTIM",
+            "query": "FALL VICTIM FAIRVIEW ST & JEFFERSON ST;  WEST POTTSGROVE; Station 329; 2019-11-24 @ 04:52:27;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 73,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM SUMMIT AVE & MONTGOMERY AVE; UPPER DUBLIN; 2016-10-06 @ 09:29:51-Station:STA88;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 74,
+            "original_title": "Fire: VEHICLE FIRE",
+            "query": "VEHICLE FIRE ARCOLA RD; UPPER PROVIDENCE; 2019-05-02 @ 15:58:07-Station:STA34;",
+            "expected_category": "Fire",
+            "predicted_category": "Traffic",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.3787,
+            "top_5_titles": [
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 75,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - HECTOR ST & LEE ST; WHITEMARSH; 2016-05-01 @ 11:05:12;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 76,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - SCHUYLKILL EXPY & RAMP I76 EB TO RT202 SB; UPPER MERION; 2018-05-11 @ 11:42:34;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 77,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM HENDERSON RD & W DEKALB PIKE; UPPER MERION; 2018-02-01 @ 11:40:17-Station:STA49;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 78,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - CROTON RD & RADNOR RD; UPPER MERION; 2018-10-18 @ 18:42:13;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 79,
+            "original_title": "EMS: RESPIRATORY EMERGENCY",
+            "query": "RESPIRATORY EMERGENCY ELM ST & WILLOW ST;  NORRISTOWN; Station 308A; 2017-07-03 @ 10:38:28;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 80,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - WAMBOLD RD & SUMNEYTOWN PIKE; TOWAMENCIN; 2017-08-22 @ 18:16:08;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 81,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION HUNTINGDON PIKE & MOREDON RD; ABINGTON; 2018-01-28 @ 05:45:52-Station:STA200;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 82,
+            "original_title": "EMS: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT RIDGE RD & S COUNTY LINE RD;  SALFORD; Station 4A151; 2017-12-15 @ 16:11:32;",
+            "expected_category": "EMS",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 83,
+            "original_title": "EMS: GENERAL WEAKNESS",
+            "query": "GENERAL WEAKNESS HOLLOW RD & SLOUGH DR;  WORCESTER; Station 322; 2019-02-02 @ 13:49:04;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7623,
+            "top_5_titles": [
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 84,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - PENNSYLVANIA TPKE & WELSH RD OVERPASS; UPPER MORELAND; 2019-04-06 @ 14:34:52;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 85,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - RAMP PENNSYLVANIA AVE TO I276  & RAMP PENNSYLVANIA AVE TO RT309 NB; UPPER DUBLIN; 2019-12-30 @ 04:56:45;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 86,
+            "original_title": "EMS: FALL VICTIM",
+            "query": "FALL VICTIM FOXCROFT CIR & FOXMEADOW DR;  LIMERICK; Station 325; 2017-05-25 @ 16:49:57;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 87,
+            "original_title": "Fire: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT LIMEKILN PIKE & MONTIER RD; CHELTENHAM; 2016-07-15 @ 20:12:05-Station:STA1;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 88,
+            "original_title": "EMS: CARDIAC EMERGENCY",
+            "query": "CARDIAC EMERGENCY VIRGINIA DR & DELAWARE AVE;  UPPER DUBLIN; Station 351; 2017-09-11 @ 15:20:30;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7685,
+            "top_5_titles": [
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 89,
+            "original_title": "EMS: HEAD INJURY",
+            "query": "HEAD INJURY SOUTH ST & PLUM ST;  POTTSTOWN; Station 329; 2019-11-23 @ 15:02:05;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7635,
+            "top_5_titles": [
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 90,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - LIMEKILN PIKE & GREENWOOD AVE; CHELTENHAM; 2018-11-15 @ 13:10:13;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 91,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - SANDY ST & KELLY DR; NORRISTOWN; 2018-07-09 @ 17:17:44;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 92,
+            "original_title": "Fire: CARBON MONOXIDE DETECTOR",
+            "query": "CARBON MONOXIDE DETECTOR SADDLEWOOD DR & DEER RUN RD; UPPER HANOVER; 2017-07-10 @ 18:09:59-Station:STA65;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6629,
+            "top_5_titles": [
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 93,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - BELMONT AVE & ST ASAPHS RD; LOWER MERION; 2018-03-01 @ 16:45:43;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 94,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM CRESSON BLVD & EGYPT RD; UPPER PROVIDENCE; 2017-01-24 @ 12:42:25-Station:STA99;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 95,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM KING ST & PENN ST; POTTSTOWN; 2016-01-18 @ 22:07:17-Station:STA69;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 96,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - RT422  & S TRAPPE RD UNDERPASS; UPPER PROVIDENCE; 2019-02-02 @ 09:39:37;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 97,
+            "original_title": "EMS: BACK PAINS/INJURY",
+            "query": "BACK PAINS/INJURY SUSQUEHANNA RD & SPARK DR;  UPPER DUBLIN; Station 351; 2017-03-30 @ 09:33:12;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7576,
+            "top_5_titles": [
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 98,
+            "original_title": "EMS: RESPIRATORY EMERGENCY",
+            "query": "RESPIRATORY EMERGENCY MARYLAND RD & COMMERCE AVE;  UPPER MORELAND; Station 384; 2017-09-26 @ 20:56:53;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 99,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM HIGH ST & S WASHINGTON ST; POTTSTOWN; 2018-11-19 @ 12:22:08-Station:STA69;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 100,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION SPRUCE LN & DEAD END; FRANCONIA; 2016-05-22 @ 16:45:07-Station:STA89;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 101,
+            "original_title": "EMS: FALL VICTIM",
+            "query": "FALL VICTIM LANSDALE AVE & E 7TH ST;  LANSDALE; Station 345; 2019-01-18 @ 16:44:59;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 102,
+            "original_title": "EMS: CARDIAC EMERGENCY",
+            "query": "CARDIAC EMERGENCY ROSEMARY AVE & POPLAR ST;  AMBLER; Station 351; 2018-02-19 @ 23:56:59;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7685,
+            "top_5_titles": [
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 103,
+            "original_title": "EMS: CARDIAC EMERGENCY",
+            "query": "CARDIAC EMERGENCY SUMNEYTOWN PIKE & BEAVER ST;  UPPER GWYNEDD; Station 345B; 2018-05-30 @ 18:49:19;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7685,
+            "top_5_titles": [
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 104,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - WILLOW GROVE AVE & W CHURCH RD; CHELTENHAM; 2017-04-10 @ 18:57:22;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 105,
+            "original_title": "Fire: CARBON MONOXIDE DETECTOR",
+            "query": "CARBON MONOXIDE DETECTOR VALLEY RD & RR OVERPASS; CHELTENHAM; 2018-09-18 @ 20:36:36-Station:STA3;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.9388,
+            "top_5_titles": [
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR",
+                "Fire: CARBON MONOXIDE DETECTOR"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 106,
+            "original_title": "EMS: RESPIRATORY EMERGENCY",
+            "query": "RESPIRATORY EMERGENCY GERYVILLE PIKE & WOODRIDGE DR;  MARLBOROUGH; Station 344A; 2017-06-23 @ 01:47:00;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 107,
+            "original_title": "Fire: ELECTRICAL FIRE OUTSIDE",
+            "query": "ELECTRICAL FIRE OUTSIDE EAST LN & DEAD END; SPRINGFIELD; 2017-01-23 @ 11:18:47-Station:STA82;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.9063,
+            "top_5_titles": [
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE",
+                "Fire: ELECTRICAL FIRE OUTSIDE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 108,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION VALLEY VIEW DR & HIGH RD; LOWER MORELAND; 2019-05-29 @ 20:34:33-Station:STA8;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 109,
+            "original_title": "EMS: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT SHOEMAKER RD & RT100 SB;  POTTSTOWN; Station 329; 2016-05-30 @ 18:02:18;",
+            "expected_category": "EMS",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 110,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - BETHLEHEM PIKE & MOORE DR; LOWER GWYNEDD; 2019-12-09 @ 11:41:40;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 111,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - N BETHLEHEM PIKE & JUGHANDLE; LOWER GWYNEDD; 2018-03-10 @ 00:52:11;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 112,
+            "original_title": "Fire: BUILDING FIRE",
+            "query": "BUILDING FIRE RIDGE PIKE & BUTLER PIKE; PLYMOUTH; 2016-01-15 @ 12:00:23-Station:STA44;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.765,
+            "top_5_titles": [
+                "Fire: BUILDING FIRE",
+                "Fire: BUILDING FIRE",
+                "Fire: BUILDING FIRE",
+                "Fire: BUILDING FIRE",
+                "Fire: BUILDING FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 113,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - CHELTENHAM AVE & PLEASANT AVE; SPRINGFIELD; 2018-01-03 @ 08:28:53;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 114,
+            "original_title": "Fire: WOODS/FIELD FIRE",
+            "query": "WOODS/FIELD FIRE TOWNSHIP LINE RD; ABINGTON; 2018-11-03 @ 16:59:23-Station:STA200;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.9063,
+            "top_5_titles": [
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 115,
+            "original_title": "EMS: SYNCOPAL EPISODE",
+            "query": "SYNCOPAL EPISODE MAIN ST & POPLAR ST;  AMBLER; Station 351; 2018-06-25 @ 15:30:50;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7638,
+            "top_5_titles": [
+                "EMS: SYNCOPAL EPISODE",
+                "EMS: SYNCOPAL EPISODE",
+                "EMS: SYNCOPAL EPISODE",
+                "EMS: SYNCOPAL EPISODE",
+                "EMS: SYNCOPAL EPISODE"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 116,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM HAMILTON AVE & WASHINGTON AVE; ABINGTON; 2017-08-30 @ 12:31:52-Station:STA500;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 117,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - S YORK RD & S WARMINSTER RD; UPPER MORELAND; 2019-12-16 @ 17:50:52;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 118,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION PLYMOUTH RD & BUTLER PIKE; PLYMOUTH; 2016-03-26 @ 22:31:36-Station:STA44;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 119,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - SUMNEYTOWN PIKE & BUSTARD RD; TOWAMENCIN; 2017-12-03 @ 14:44:11;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 120,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - NEW SECOND ST & ASHBOURNE RD; CHELTENHAM; 2016-01-20 @ 20:49:47;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 121,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - SELMA ST & OAKWOOD AVE; NORRISTOWN; 2016-11-13 @ 16:10:23;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 122,
+            "original_title": "EMS: HEAD INJURY",
+            "query": "HEAD INJURY EASTON RD & CENTER AVE;  UPPER MORELAND; Station 381; 2018-02-09 @ 12:04:09;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7635,
+            "top_5_titles": [
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 123,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - WATER ST & WILLOW ALY; AMBLER; 2019-06-22 @ 19:13:55;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.442,
+            "top_5_titles": [
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 124,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - FAYETTE ST & FRONT ST; WEST CONSHOHOCKEN; 2016-06-16 @ 16:03:04;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 125,
+            "original_title": "EMS: CARDIAC EMERGENCY",
+            "query": "CARDIAC EMERGENCY THORNTON CT & INDEPENDENCE DR;  MONTGOMERY; Station 345A; 2019-07-18 @ 06:31:17;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7685,
+            "top_5_titles": [
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 126,
+            "original_title": "Traffic: ROAD OBSTRUCTION -",
+            "query": "ROAD OBSTRUCTION - JONES RD & BALLIGOMINGO RD; UPPER MERION; 2019-11-01 @ 14:49:58;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7467,
+            "top_5_titles": [
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 127,
+            "original_title": "Fire: FIRE INVESTIGATION",
+            "query": "FIRE INVESTIGATION BYBERRY RD & KAREN LN; UPPER MORELAND; 2019-09-22 @ 11:59:14-Station:STA10;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 128,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM NORTH HILLS AVE & WOODROW AVE; UPPER DUBLIN; 2020-07-12 @ 09:38:54-Station:STA88;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 129,
+            "original_title": "EMS: ABDOMINAL PAINS",
+            "query": "ABDOMINAL PAINS MARSHALL ST & POLK ALY;  NORRISTOWN; Station 308A; 2018-07-02 @ 02:33:50;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.756,
+            "top_5_titles": [
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 130,
+            "original_title": "Traffic: ROAD OBSTRUCTION -",
+            "query": "ROAD OBSTRUCTION - RT422  & AIRPORT RD OVERPASS; LIMERICK; 2017-12-16 @ 20:33:09;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7467,
+            "top_5_titles": [
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 131,
+            "original_title": "Fire: UNKNOWN TYPE FIRE",
+            "query": "UNKNOWN TYPE FIRE RIDGE PIKE & SPRING MILL RD; WHITEMARSH; 2017-10-02 @ 07:17:23-Station:STA29;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.8916,
+            "top_5_titles": [
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 132,
+            "original_title": "Fire: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT GULPH RD & KIRK AVE; UPPER MERION; 2019-04-20 @ 11:05:15-Station:STA47;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 133,
+            "original_title": "EMS: HEAD INJURY",
+            "query": "HEAD INJURY 2ND AVE & FORREST ST;  CONSHOHOCKEN; Station 313A; 2019-12-06 @ 02:59:39;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7635,
+            "top_5_titles": [
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 134,
+            "original_title": "Fire: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT S MAIN ST; TELFORD; 2020-02-04 @ 14:11:12-Station:STA75;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 135,
+            "original_title": "EMS: ABDOMINAL PAINS",
+            "query": "ABDOMINAL PAINS CENTRAL AVE & COTTMAN AVE;  CHELTENHAM; Station 358; 2017-09-10 @ 06:09:33;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.756,
+            "top_5_titles": [
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 136,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - W CHURCH RD & MULFORD RD; CHELTENHAM; 2019-08-08 @ 17:16:45;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 137,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM GERMANTOWN PIKE & MAYFLOWER RD; WHITEMARSH; 2019-10-10 @ 09:08:29-Station:STA29;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 138,
+            "original_title": "Fire: UNKNOWN TYPE FIRE",
+            "query": "UNKNOWN TYPE FIRE ANZAC AVE; ABINGTON; 2020-01-10 @ 18:20:22-Station:STA500;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.8916,
+            "top_5_titles": [
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 139,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - COLLEGEVILLE RD & PARK AVE; UPPER PROVIDENCE; 2017-02-22 @ 02:18:16;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 140,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM BRANCH AVE & W RIDGE AVE; TELFORD; 2019-03-28 @ 12:33:56-Station:STA75;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 141,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - W MARSHALL ST & MARKLEY ST; NORRISTOWN; 2017-01-05 @ 23:17:57;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 142,
+            "original_title": "Traffic: DISABLED VEHICLE -",
+            "query": "DISABLED VEHICLE - KING ST & RR CROSSING; POTTSTOWN; 2018-03-25 @ 08:19:18;",
+            "expected_category": "Traffic",
+            "predicted_category": "Traffic",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ]
+        },
+        {
+            "test_number": 143,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM RIDGE PIKE & E MAIN ST; PLYMOUTH; 2018-11-25 @ 08:38:21-Station:STA43;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 144,
+            "original_title": "Fire: VEHICLE ACCIDENT",
+            "query": "VEHICLE ACCIDENT RAMP I276 TO RT611 SB; UPPER MORELAND; 2018-11-18 @ 21:04:38-Station:STA10;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 145,
+            "original_title": "EMS: SUBJECT IN PAIN",
+            "query": "SUBJECT IN PAIN WALNUT ST & W 6TH ST;  RED HILL; Station 369; 2017-10-21 @ 21:46:24;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7501,
+            "top_5_titles": [
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN",
+                "EMS: SUBJECT IN PAIN"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 146,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - LINFIELD TRAPPE RD & S TOWNSHIP LINE RD; LIMERICK; 2017-11-29 @ 19:02:53;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 147,
+            "original_title": "Fire: WOODS/FIELD FIRE",
+            "query": "WOODS/FIELD FIRE JACKSON DR & HAIN DR; WHITEMARSH; 2017-09-27 @ 16:08:28-Station:STA29;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.9063,
+            "top_5_titles": [
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 148,
+            "original_title": "EMS: GENERAL WEAKNESS",
+            "query": "GENERAL WEAKNESS GREENWOOD AVE & JENKINTOWN RD;  ABINGTON; Station 382; 2018-04-17 @ 22:09:55;",
+            "expected_category": "EMS",
+            "predicted_category": "EMS",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.7623,
+            "top_5_titles": [
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS",
+                "EMS: GENERAL WEAKNESS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ]
+        },
+        {
+            "test_number": 149,
+            "original_title": "Traffic: VEHICLE ACCIDENT -",
+            "query": "VEHICLE ACCIDENT - E CITY AVE & PRESIDENTIAL BLVD; LOWER MERION; 2016-11-09 @ 09:41:19;",
+            "expected_category": "Traffic",
+            "predicted_category": "Fire",
+            "correct": false,
+            "precision_at_5": 0.0,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        },
+        {
+            "test_number": 150,
+            "original_title": "Fire: FIRE ALARM",
+            "query": "FIRE ALARM LANCASTER AVE & DREYCOTT LN; LOWER MERION; 2017-08-14 @ 08:21:24-Station:STA25;",
+            "expected_category": "Fire",
+            "predicted_category": "Fire",
+            "correct": true,
+            "precision_at_5": 1.0,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ]
+        }
+    ]
+}

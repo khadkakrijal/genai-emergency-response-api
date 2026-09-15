@@ -1,0 +1,907 @@
+{
+    "experiment": "LLM prompt comparison",
+    "dataset": "20% held-out Kaggle 911 test set",
+    "reference_source": "80% Kaggle 911 reference set",
+    "test_cases": 30,
+    "samples_per_category": 10,
+    "top_k": 5,
+    "random_state": 42,
+    "prompts": {
+        "A_BASIC": "Current incident only",
+        "B_RAG": "Current incident plus RAG context",
+        "C_RAG_GUARDRAIL": "Current incident plus RAG, structured guidance and anti-hallucination guardrails"
+    },
+    "metrics": {
+        "A_BASIC": {
+            "accuracy": 0.9667,
+            "precision": 0.9697,
+            "recall": 0.9667,
+            "f1_score": 0.9666
+        },
+        "B_RAG": {
+            "accuracy": 0.9,
+            "precision": 0.9024,
+            "recall": 0.9,
+            "f1_score": 0.8997
+        },
+        "C_RAG_GUARDRAIL": {
+            "accuracy": 0.9333,
+            "precision": 0.9444,
+            "recall": 0.9333,
+            "f1_score": 0.9327
+        }
+    },
+    "best_prompt": "A_BASIC",
+    "results": [
+        {
+            "test_number": 1,
+            "title": "Fire: FIRE INVESTIGATION",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is a fire investigation with a location on Byberry Rd and Karen Ln, which classifies it as a Fire incident.",
+            "prompt_b_reasoning": "Incident classification is based on similar historical incidents with a similarity score of 0.7776, which all categorized as Fire investigations.",
+            "prompt_c_reasoning": "Similarity of 0.7776 with historical incidents suggests a fire investigation, but lacks specific details to confirm category, returning Uncertain"
+        },
+        {
+            "test_number": 2,
+            "title": "Traffic: VEHICLE ACCIDENT -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is a vehicle accident with a specific location (High St and Armand Hammer Blvd) indicating that the primary focus is on the traffic aspect of the incident.",
+            "prompt_b_reasoning": "High similarity to similar historical incidents (VEHICLE ACCIDENT) with a high incidence rate of fire, indicating a possible vehicle accident at the scene",
+            "prompt_c_reasoning": "The current incident is a vehicle accident on High St and Armand Hammer Blvd in Pottstown, similar to other historical incidents involving traffic collisions."
+        },
+        {
+            "test_number": 3,
+            "title": "Fire: UNKNOWN TYPE FIRE",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.8916,
+            "top_5_titles": [
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE",
+                "Fire: UNKNOWN TYPE FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "Incident type is unknown but location and time stamp suggest a possible fire on Anzac Ave in Abbington, which matches the provided station code STA500.",
+            "prompt_b_reasoning": "Similarity to 4 historical incidents with the same type and category, indicating a likely fire incident.",
+            "prompt_c_reasoning": "Similarity with historical incidents indicates a high probability of fire, but insufficient details for further classification."
+        },
+        {
+            "test_number": 4,
+            "title": "Traffic: ROAD OBSTRUCTION -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7467,
+            "top_5_titles": [
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -",
+                "Traffic: ROAD OBSTRUCTION -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ],
+            "prompt_a_reasoning": "Incident involved road obstruction, indicating a traffic-related issue.",
+            "prompt_b_reasoning": "The current incident is classified as a traffic incident due to road obstruction, which is supported by the high similarity score (0.7467) with multiple historical incidents of similar nature and category.",
+            "prompt_c_reasoning": "The current incident is a road obstruction at RT422 & AIRPORT RD OVERPASS in LIMERICK, which is classified as a traffic incident based on the location and nature of the event."
+        },
+        {
+            "test_number": 5,
+            "title": "EMS: BACK PAINS/INJURY",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7576,
+            "top_5_titles": [
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY",
+                "EMS: BACK PAINS/INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident involves a back pain/injury, which is a medical condition that requires emergency medical attention. This type of incident would typically require an ambulance response from EMS personnel.",
+            "prompt_b_reasoning": "The high similarity with multiple historical incidents classified as EMS (0.7576) indicates that the current incident involving a back pain/injury is likely to be related to emergency medical services.",
+            "prompt_c_reasoning": "Similar historical incidents indicate a possible back pain/injury incident, with no specific details to differentiate it from other similar incidents."
+        },
+        {
+            "test_number": 6,
+            "title": "EMS: FALL VICTIM",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident involves a fall victim, indicating medical assistance is required",
+            "prompt_b_reasoning": "The current incident is classified as EMS due to the presence of a fall victim, which aligns with historical incidents categorized under EMS. The location and time of day also support this classification.",
+            "prompt_c_reasoning": "Based on the location (FRANKLIN ST & E HANCOCK ST) and time of day (04:42:27), which is early morning, there is a higher likelihood of fall victim incidents involving older adults or individuals who may have slipped or fallen while walking. Additionally, similar historical incidents show a strong pattern of falls occurring on sidewalks or streets, particularly in areas with poor lighting or uneven surfaces. Considering the lack of information about the type of incident, potential injuries, or the circumstances surrounding the fall, I am classifying this as an EMS incident to prioritize medical assistance and ensure the victim receives necessary treatment."
+        },
+        {
+            "test_number": 7,
+            "title": "Fire: FIRE INVESTIGATION",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "Incident details mention a fire investigation, which is directly related to the Fire category.",
+            "prompt_b_reasoning": "The current incident is a fire investigation, which is similar to historical incidents with the same title and category. The similarity score of 0.7776 indicates that this incident shares characteristics with these previous events.",
+            "prompt_c_reasoning": "Similarity of 0.7776 with multiple historical incidents involving fire investigations on Greenwood Ave, Cheltenham, matching the date and time."
+        },
+        {
+            "test_number": 8,
+            "title": "Fire: FIRE ALARM",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "FIRE ALARM",
+            "prompt_b_reasoning": "The incident is a fire alarm, which is similar to historical incidents that were categorized as fires. Additionally, the location (ASHBOURNE RD & HOPELAND RD) and timestamp (2018-01-04 @ 13:10:43) are consistent with previous fire incidents.",
+            "prompt_c_reasoning": "Similarity to multiple historical incidents with high relevance, indicating a likely fire alarm scenario, but no explicit details on fire type or location that could indicate building fire, vehicle fire, etc."
+        },
+        {
+            "test_number": 9,
+            "title": "Traffic: VEHICLE ACCIDENT -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is classified as a traffic accident because it involves a vehicle collision, which is a common type of traffic-related incident.",
+            "prompt_b_reasoning": "Similarity score of 0.6773 with multiple historical incidents of Vehicle Accident categorized under Fire, indicating that while there may be a fire component to the current incident, the primary classification is related to the vehicle accident itself.",
+            "prompt_c_reasoning": "Similar historical incidents indicate a vehicle accident, and while there is no mention of fire, the location and time frame are consistent with similar incidents in the area."
+        },
+        {
+            "test_number": 10,
+            "title": "EMS: MEDICAL ALERT ALARM",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.8306,
+            "top_5_titles": [
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM",
+                "EMS: MEDICAL ALERT ALARM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident is classified as an EMS (Emergency Medical Services) incident due to the presence of a 'MEDICAL ALERT ALARM' and the location being in Norristown, which suggests that medical assistance was required.",
+            "prompt_b_reasoning": "The high similarity to EMS: MEDICAL ALERT ALARM incidents suggests that the current incident is also a medical emergency. The location and time of the incident are consistent with previous similar incidents, indicating a potential medical alert alarm.",
+            "prompt_c_reasoning": "Similar historical incidents and time of day (19:48) indicate a potential medical emergency, but no specific details about injuries, victims, or events are provided. The location (BASIN ST & GREENVALLEY RD; NORRISTOWN) does not strongly suggest a vehicle crash or fire incident."
+        },
+        {
+            "test_number": 11,
+            "title": "EMS: HEAD INJURY",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7635,
+            "top_5_titles": [
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY",
+                "EMS: HEAD INJURY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident type is EMS due to the mention of a head injury, which is a medical emergency requiring immediate attention from medical personnel.",
+            "prompt_b_reasoning": "Similarity to multiple EMS head injury incidents in Lower Merion, suggesting a possible vehicle accident or similar incident that required emergency medical services.",
+            "prompt_c_reasoning": "The incident is classified as an EMS due to the presence of a head injury, which requires medical assistance. The similarity between this incident and historical incidents with the same category supports this classification."
+        },
+        {
+            "test_number": 12,
+            "title": "Traffic: VEHICLE ACCIDENT -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident occurred on a vehicle accident involving two vehicles, indicated by the location (SCHUYLKILL EXPY & WEADLEY RD OVERPASS; UPPER MERION) and time of occurrence (2016-03-03 @ 09:26:02). This classification aligns with the Traffic category as it involves a vehicular collision.",
+            "prompt_b_reasoning": "The incident occurred on a vehicle accident involving an overpass, which is a common location for accidents. The high frequency of similar historical incidents categorized as 'Fire: VEHICLE ACCIDENT' suggests that the cause might not be related to fire. Therefore, Traffic is the most likely classification.",
+            "prompt_c_reasoning": "The incident occurred on a highway (SCHUYLKILL EXPY & WEADLEY RD OVERPASS) and is classified as a vehicle crash, which aligns with the traffic category. The similarity of historical incidents to this one suggests that fire involvement is unlikely."
+        },
+        {
+            "test_number": 13,
+            "title": "EMS: RESPIRATORY EMERGENCY",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident is classified as EMS because it involves a respiratory emergency, which requires medical attention. The location and time of the incident do not indicate a fire or traffic-related issue.",
+            "prompt_b_reasoning": "The current incident is classified as EMS due to the additional details provided, which include a respiratory emergency. Historical incidents with similar categorizations and similarities suggest that this incident aligns with typical EMS responses to medical emergencies.",
+            "prompt_c_reasoning": "Similarity to historical respiratory emergencies with time and location matches, indicating a probable respiratory emergency response."
+        },
+        {
+            "test_number": 14,
+            "title": "Traffic: VEHICLE ACCIDENT -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is classified as a traffic accident due to the presence of a vehicle involved in an accident, which is a common characteristic of traffic incidents.",
+            "prompt_b_reasoning": "No fire involvement; hence categorized under Vehicle Accident. Historical incidents indicate the accident occurred on 2018-10-18 @ 18:42:13, which suggests a standard traffic incident rather than an accident involving fire.",
+            "prompt_c_reasoning": "High similarity between current incident (VEHICLE ACCIDENT) and historical incidents (Fire: VEHICLE ACCIDENT) with a value of 0.6773, indicating a potential fire involvement or smoke presence at the scene."
+        },
+        {
+            "test_number": 15,
+            "title": "Traffic: VEHICLE ACCIDENT -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": false,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is a vehicle accident with location details (MARKLEY ST & W AIRY ST), which suggests that the primary issue is related to transportation or vehicular movement.",
+            "prompt_b_reasoning": "Although the initial classification is EMS, it's essential to note that there are no fire-related details in the current incident. The similar historical incidents with a high similarity score (0.6773) all fall under the category of 'Fire: VEHICLE ACCIDENT', but they do not share any information about injuries or medical emergencies. Therefore, without further context or details indicating otherwise, it's reasonable to conclude that the primary focus of this incident is on Medical Emergencies.",
+            "prompt_c_reasoning": "No fire-related details are present, and no injuries requiring medical assistance were reported. The incident type is most consistent with a vehicle accident, which aligns with historical incidents and safety rules."
+        },
+        {
+            "test_number": 16,
+            "title": "Fire: FIRE ALARM",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The presence of a fire alarm, specifically mentioned as an incident type on its own, suggests that the primary nature of this event is indeed a fire. The location and time also support this classification.",
+            "prompt_b_reasoning": "The similarity score of 0.758 with multiple historical incidents categorizing as 'FIRE ALARM' suggests that the current incident is likely related to a fire alarm, warranting classification as Fire.",
+            "prompt_c_reasoning": "Similar historical incidents suggest a possible fire alarm incident, but no specific details such as cause, extent of damage, or injuries are available, thus leaving the classification uncertain."
+        },
+        {
+            "test_number": 17,
+            "title": "EMS: ABDOMINAL PAINS",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.756,
+            "top_5_titles": [
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS",
+                "EMS: ABDOMINAL PAINS"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident type is EMS because it mentions abdominal pains, which is a medical emergency. The location and time of the incident do not suggest a traffic or fire-related issue.",
+            "prompt_b_reasoning": "The similarity in titles and categories between the historical incidents and the current incident, along with the lack of any specific information suggesting a traffic or fire-related incident, indicate that the current incident is most likely related to an EMS (Emergency Medical Services) call. The location and time frame provided do not offer any distinct characteristics that would suggest otherwise.",
+            "prompt_c_reasoning": "Similar historical incidents of EMS: ABDOMINAL PAINS, categorized as Medical emergencies, with a similarity of 0.756, support classification as an EMS incident."
+        },
+        {
+            "test_number": 18,
+            "title": "EMS: VEHICLE ACCIDENT",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": false,
+            "prompt_b_correct": false,
+            "prompt_c_correct": false,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is a vehicle accident reported on Shoemaker Rd and RT100 SB in Pottstown, which falls under the category of Traffic incidents as it involves a vehicular collision.",
+            "prompt_b_reasoning": "The current incident is a vehicle accident with no mention of fire, and the historical incidents are all categorized as Fire but have similar similarity scores to the current incident. This suggests that the classification may not be accurate for the current incident.",
+            "prompt_c_reasoning": "Similar historical incidents (VEHICLE ACCIDENT) with a high similarity score of 0.6773 indicate a vehicle accident, which is the primary classification for this incident."
+        },
+        {
+            "test_number": 19,
+            "title": "Fire: FIRE ALARM",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The presence of the phrase 'FIRE ALARM' in the incident report strongly suggests that the incident is related to a fire alarm activation.",
+            "prompt_b_reasoning": "Similarity to historical incidents with a category of Fire (0.758) and multiple similar incidents on the same day at the same location, indicating a potential fire alarm incident.",
+            "prompt_c_reasoning": "Similarity to historical fire alarm incidents on 2016-07-26 at Sta69, indicating potential fire alarm scenario."
+        },
+        {
+            "test_number": 20,
+            "title": "EMS: FALL VICTIM",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7579,
+            "top_5_titles": [
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM",
+                "EMS: FALL VICTIM"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident is classified as an EMS (Emergency Medical Services) incident because the primary details mentioned are a fall victim, indicating a medical emergency. The location and time also suggest that this incident likely involves a response by paramedics or other medical personnel.",
+            "prompt_b_reasoning": "The incident has a high similarity to EMS fall victim incidents, with a similarity score of 0.7579, indicating that it is likely an emergency medical services response.",
+            "prompt_c_reasoning": "The current incident is classified as an EMS due to the presence of a fall victim, which indicates a medical emergency. The location and time of the incident are similar to those in historical incidents with a high similarity score, further supporting this classification."
+        },
+        {
+            "test_number": 21,
+            "title": "Fire: VEHICLE FIRE",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.3787,
+            "top_5_titles": [
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -",
+                "Traffic: VEHICLE FIRE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ],
+            "prompt_a_reasoning": "The incident involves a vehicle fire, which is the primary type of incident. The location and time also suggest that this is an incident involving a fire.",
+            "prompt_b_reasoning": "The incident is classified as a Fire because it has occurred in a vehicle, with no other categories (EMS or Traffic) mentioned. The historical incidents of VEHICLE FIRE are highly similar, which further supports this classification.",
+            "prompt_c_reasoning": "Vehicle fire occurred on Arcola Rd in Upper Providence, with similar incidents from historical records indicating a pattern of traffic-related vehicle fires."
+        },
+        {
+            "test_number": 22,
+            "title": "Fire: WOODS/FIELD FIRE",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.9063,
+            "top_5_titles": [
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE",
+                "Fire: WOODS/FIELD FIRE"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident involves a woods/fire, which is classified as a fire incident. The location (Jackson Dr & Hain Dr; Whitemarsh) further confirms this classification.",
+            "prompt_b_reasoning": "The incident type is classified as Fire due to the mention of a Woods/Field Fire at Jackson Dr & Hain Dr in Whitemarsh, with a reported time of 2017-09-27 @ 16:08:28. This classification is supported by the similarity score of 0.9063 with multiple historical incidents categorised as Fire, indicating a high degree of relevance.",
+            "prompt_c_reasoning": "Similarity of 0.9063 to historical incidents, indicating a high likelihood of a field fire in Whitemarsh."
+        },
+        {
+            "test_number": 23,
+            "title": "Traffic: DISABLED VEHICLE -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": false,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.442,
+            "top_5_titles": [
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER",
+                "Fire: RESCUE - WATER"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "Disabled vehicle with location Water St & Willow Aly in Ambler, indicating a traffic-related incident",
+            "prompt_b_reasoning": "The similarity in the incident type and category (Rescue) with historical incidents indicates a potential emergency medical services response. The disabled vehicle details further support this classification, as ambulance assistance may be required.",
+            "prompt_c_reasoning": "Disabled vehicle reported at Water St and Willow Aly, Ambler; historical incidents show a high frequency of traffic-related incidents involving disabled vehicles on this location."
+        },
+        {
+            "test_number": 24,
+            "title": "Fire: FIRE ALARM",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.758,
+            "top_5_titles": [
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM",
+                "Fire: FIRE ALARM"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is a fire alarm with a specific location (WALNUT ST & S 4TH AVE; ROYERSFORD) and time (2017-06-28 @ 08:08:45), indicating a potential fire emergency.",
+            "prompt_b_reasoning": "The similarity of 0.758 in category and title to the historical incidents suggests a high likelihood that the current incident is also related to fire.",
+            "prompt_c_reasoning": "Similar historical incidents indicate a fire alarm at STA98, indicating potential structural issues or equipment failure, and warrants further investigation."
+        },
+        {
+            "test_number": 25,
+            "title": "Fire: FIRE INVESTIGATION",
+            "expected_category": "Fire",
+            "prompt_a_prediction": "Fire",
+            "prompt_b_prediction": "Fire",
+            "prompt_c_prediction": "Fire",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7776,
+            "top_5_titles": [
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION",
+                "Fire: FIRE INVESTIGATION"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is a fire investigation, as indicated by the details provided (FIRE INVESTIGATION). This classification is based on the type of incident and the fact that it was reported at a specific location (VALLEY VIEW DR & HIGH RD) with a station reference (STA8).",
+            "prompt_b_reasoning": "Similarity scores suggest a high degree of similarity with multiple historical incidents classified as Fire Investigations, indicating a likely fire investigation incident at the specified location (VALLEY VIEW DR & HIGH RD; LOWER MORELAND) on 2019-05-29 @ 20:34:33.",
+            "prompt_c_reasoning": "Similarity to multiple historical incidents (FIRE INVESTIGATION) with a high similarity score of 0.7776, indicating a strong indication that the current incident is related to a fire investigation."
+        },
+        {
+            "test_number": 26,
+            "title": "EMS: CARDIAC EMERGENCY",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "EMS",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7685,
+            "top_5_titles": [
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY",
+                "EMS: CARDIAC EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "Cardiac emergency is a medical issue, which requires immediate attention from emergency medical services (EMS) personnel.",
+            "prompt_b_reasoning": "The similarity between this incident and the historical EMS: CARDIAC EMERGENCY incidents, with a similarity score of 0.7685, indicates that it shares similar characteristics and is most likely an emergency medical services response.",
+            "prompt_c_reasoning": "Cardiac emergency occurred on 2017-09-11 at 15:20:30 near Virginia Dr and Delaware Ave in Upper Dublin, PA. Historical incidents suggest a high likelihood of a cardiac emergency, with similar incidents reported on the same date and location."
+        },
+        {
+            "test_number": 27,
+            "title": "Traffic: VEHICLE ACCIDENT -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "The incident is classified as Traffic because it involves a vehicle accident, which is the primary cause of the incident. This classification is supported by the presence of additional details that describe the location and time of the incident.",
+            "prompt_b_reasoning": "The similarity in title and category to historical incidents suggests that the primary focus is on a traffic-related incident, such as a vehicle accident. Although fire was mentioned in some of the similar incidents, none of them explicitly state that it was a result of or related to a vehicle accident. Therefore, based on the available information and similarities with other incidents, it is reasonable to classify this incident as Traffic.",
+            "prompt_c_reasoning": "Similar historical incidents (0.6773) and location (CHELTENHAM AVE & PLEASANT AVE) suggest a vehicle accident, which falls under the category of traffic incidents."
+        },
+        {
+            "test_number": 28,
+            "title": "Traffic: DISABLED VEHICLE -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.7018,
+            "top_5_titles": [
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -",
+                "Traffic: DISABLED VEHICLE -"
+            ],
+            "top_5_categories": [
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic",
+                "Traffic"
+            ],
+            "prompt_a_reasoning": "Incident involves a disabled vehicle located on Bethlehen Pike & Jughandle, Lower Gwynedd, suggesting it is related to traffic or road conditions.",
+            "prompt_b_reasoning": "The incident is classified as a Traffic incident due to the nature of the report, which mentions a disabled vehicle on NB Bethlehen Pike & Jughandle in Lower Gwynedd. This classification is supported by similar historical incidents that also reported traffic incidents involving disabled vehicles.",
+            "prompt_c_reasoning": "The current incident is classified as a Traffic incident due to the presence of a disabled vehicle on NB Bethlehem Pike and Jughandle, which aligns with the historical incidents provided. The similarity in titles and categories suggests that this type of incident has occurred before in the same location."
+        },
+        {
+            "test_number": 29,
+            "title": "Traffic: VEHICLE ACCIDENT -",
+            "expected_category": "Traffic",
+            "prompt_a_prediction": "Traffic",
+            "prompt_b_prediction": "Traffic",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": true,
+            "highest_similarity": 0.6773,
+            "top_5_titles": [
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT",
+                "Fire: VEHICLE ACCIDENT"
+            ],
+            "top_5_categories": [
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire",
+                "Fire"
+            ],
+            "prompt_a_reasoning": "Incident classification determined based on the mention of a vehicle accident, which is a primary category under traffic incidents.",
+            "prompt_b_reasoning": "Similarity with historical incidents shows a fire occurrence, however the primary classification of the current incident is vehicle accident without any mention of fire. Hence it is classified under Traffic category.",
+            "prompt_c_reasoning": "High similarity to historical vehicle accident incidents (0.6773) and location matches new second st & ashbourne rd in cheltenham on 2016-01-20."
+        },
+        {
+            "test_number": 30,
+            "title": "EMS: RESPIRATORY EMERGENCY",
+            "expected_category": "EMS",
+            "prompt_a_prediction": "EMS",
+            "prompt_b_prediction": "EMS",
+            "prompt_c_prediction": "Traffic",
+            "prompt_a_correct": true,
+            "prompt_b_correct": true,
+            "prompt_c_correct": false,
+            "highest_similarity": 0.7663,
+            "top_5_titles": [
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY",
+                "EMS: RESPIRATORY EMERGENCY"
+            ],
+            "top_5_categories": [
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS",
+                "EMS"
+            ],
+            "prompt_a_reasoning": "The incident is a respiratory emergency, which requires medical attention. The location and time of the incident (GERYVILLE PIKE & WOODRIDGE DR; MARLBOROUGH) suggest that it involves patient transport or care, characteristic of EMS operations.",
+            "prompt_b_reasoning": "The current incident is classified as an EMS due to its similarity in title and category to the historical respiratory emergency incidents, indicating a medical emergency response.",
+            "prompt_c_reasoning": ""
+        }
+    ]
+}
