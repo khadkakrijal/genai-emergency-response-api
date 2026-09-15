@@ -328,21 +328,10 @@ def analyse_incident(
 # UPDATE INCIDENT
 # =========================================================
 
-@app.put("/incidents/{incident_id}")
-def edit_incident(
-    incident_id: str,
-    data: IncidentUpdateRequest,
-):
+@app.put("/incidents/{incident_id}/reanalyse")
+def reanalyse_incident(incident_id: str, data: IncidentRequest):
     try:
-        # ---------------------------------------------
-        # Check incident exists
-        # ---------------------------------------------
-
-        existing_incident = (
-            get_incident_by_id(
-                incident_id
-            )
-        )
+        existing_incident = get_incident_by_id(incident_id)
 
         if not existing_incident:
             raise HTTPException(
@@ -350,67 +339,94 @@ def edit_incident(
                 detail="Incident not found",
             )
 
-        # ---------------------------------------------
-        # Only include fields actually supplied
-        # ---------------------------------------------
+        start_time = time.time()
 
-        update_data = (
-            data.model_dump(
-                exclude_unset=True
-            )
+        incident_data = data.model_dump()
+
+        ai_result = classifier.classify(incident_data)
+
+        processing_time_ms = int(
+            (time.time() - start_time) * 1000
         )
 
-        if not update_data:
-            raise HTTPException(
-                status_code=400,
-                detail=(
-                    "No incident fields "
-                    "provided for update"
-                ),
-            )
+        using_groq = (
+            os.getenv("USE_GROQ", "false").lower()
+            == "true"
+        )
 
-        # ---------------------------------------------
-        # Update database
-        # ---------------------------------------------
+        ai_model = (
+            os.getenv(
+                "GROQ_MODEL",
+                "openai/gpt-oss-120b",
+            )
+            if using_groq
+            else "Ollama Llama 3.2"
+        )
+
+        updated_record = {
+            "description": data.description,
+            "location": data.location,
+            "incident_time": data.incident_time,
+            "people_involved": data.people_involved,
+            "weapon_involved": data.weapon_involved,
+            "injury_reported": data.injury_reported,
+            "location_type": data.location_type,
+
+            "incident_type": ai_result.get(
+                "incident_type"
+            ),
+            "risk_level": ai_result.get(
+                "risk_level"
+            ),
+            "priority": ai_result.get(
+                "priority"
+            ),
+            "confidence_score": ai_result.get(
+                "confidence_score"
+            ),
+            "summary": ai_result.get("summary"),
+            "recommended_response": ai_result.get(
+                "recommended_response"
+            ),
+            "reasoning": ai_result.get(
+                "reasoning"
+            ),
+            "responders": ai_result.get(
+                "responders"
+            ),
+            "key_risks": ai_result.get(
+                "key_risks"
+            ),
+
+            "ai_model": ai_model,
+            "processing_time_ms": processing_time_ms,
+            "status": "Completed",
+        }
 
         updated = update_incident(
             incident_id,
-            update_data,
+            updated_record,
         )
 
-        if not updated:
-            raise HTTPException(
-                status_code=404,
-                detail="Incident not found",
-            )
-
         return {
-            "message":
-                "Incident updated successfully",
-            "incident":
-                updated[0]
-                if isinstance(
-                    updated,
-                    list,
-                )
-                and updated
-                else updated,
+            **ai_result,
+            "processing_time_ms": processing_time_ms,
+            "updated_incident": updated,
         }
 
     except HTTPException:
         raise
 
-    except Exception as e:
+    except Exception as error:
         print(
-            f"Error updating incident "
-            f"{incident_id}: {e}"
+            f"Reanalysis failed for {incident_id}:",
+            error,
         )
 
         raise HTTPException(
             status_code=500,
-            detail="Unable to update incident",
+            detail="Unable to reanalyse incident",
         )
-
 
 # =========================================================
 # DELETE INCIDENT
