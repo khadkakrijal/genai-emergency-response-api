@@ -2,16 +2,13 @@ from ai.retriever import retrieve_similar_incidents
 from ai.summariser import generate_ai_analysis
 
 
-# Keep the current production threshold unchanged
-# while comparing V1 and V2 retrieval.
 MIN_SIMILARITY_THRESHOLD = 0.10
 
 
 class EmergencyClassifier:
     def classify(self, incident_data: dict):
-
         # -------------------------------------------------
-        # Extract incident information
+        # Extract current incident information
         # -------------------------------------------------
 
         description = (
@@ -25,7 +22,7 @@ class EmergencyClassifier:
         ).strip()
 
         # -------------------------------------------------
-        # Validate incident description
+        # Validate description
         # -------------------------------------------------
 
         if not description:
@@ -34,18 +31,17 @@ class EmergencyClassifier:
             )
 
         # -------------------------------------------------
-        # Retrieve similar historical incidents
-        #
-        # V2 Location-Aware Retrieval:
+        # V2 LOCATION-AWARE RETRIEVAL
         #
         # Query:
         #   description + location
         #
-        # Historical records:
+        # Historical comparison:
         #   title + incident_type + addr + twp
         #
-        # The actual TF-IDF/cosine similarity calculation
-        # is handled inside similarity.py.
+        # similarity.py performs:
+        #   70% word TF-IDF cosine similarity
+        #   30% character TF-IDF cosine similarity
         # -------------------------------------------------
 
         try:
@@ -56,9 +52,7 @@ class EmergencyClassifier:
             )
 
         except Exception as error:
-            print(
-                f"Historical retrieval error: {error}"
-            )
+            print(f"Historical retrieval error: {error}")
 
             return self.human_review_response(
                 reason=(
@@ -68,7 +62,7 @@ class EmergencyClassifier:
             )
 
         # -------------------------------------------------
-        # Check whether historical evidence exists
+        # Check retrieval result
         # -------------------------------------------------
 
         if not similar_incidents:
@@ -80,28 +74,22 @@ class EmergencyClassifier:
             )
 
         # -------------------------------------------------
-        # Find highest retrieval similarity
+        # Highest retrieved similarity
         # -------------------------------------------------
 
         highest_similarity = max(
             float(
-                item.get(
-                    "similarity_score",
-                    0.0,
-                )
+                item.get("similarity_score", 0.0)
                 or 0.0
             )
             for item in similar_incidents
         )
 
         # -------------------------------------------------
-        # Similarity evidence threshold
+        # Evidence threshold
         # -------------------------------------------------
 
-        if (
-            highest_similarity
-            < MIN_SIMILARITY_THRESHOLD
-        ):
+        if highest_similarity < MIN_SIMILARITY_THRESHOLD:
             return self.human_review_response(
                 reason=(
                     "Retrieved historical incidents "
@@ -113,11 +101,7 @@ class EmergencyClassifier:
             )
 
         # -------------------------------------------------
-        # Generate AI situational assessment
-        #
-        # The LLM receives:
-        # - Current incident data
-        # - Top-K retrieved historical incidents
+        # Generate LLM situational assessment
         # -------------------------------------------------
 
         try:
@@ -127,38 +111,24 @@ class EmergencyClassifier:
             )
 
         except Exception as error:
-            print(
-                f"AI analysis error: {error}"
-            )
+            print(f"AI analysis error: {error}")
 
             return self.human_review_response(
-                reason=(
-                    "AI analysis could not "
-                    "be completed."
-                ),
+                reason="AI analysis could not be completed.",
                 similarity_score=highest_similarity,
                 similar_incidents=similar_incidents,
             )
 
         # -------------------------------------------------
-        # Validate AI response type
+        # Validate LLM response
         # -------------------------------------------------
 
-        if not isinstance(
-            ai_result,
-            dict,
-        ):
+        if not isinstance(ai_result, dict):
             return self.human_review_response(
-                reason=(
-                    "AI returned an invalid response."
-                ),
+                reason="AI returned an invalid response.",
                 similarity_score=highest_similarity,
                 similar_incidents=similar_incidents,
             )
-
-        # -------------------------------------------------
-        # Validate required AI fields
-        # -------------------------------------------------
 
         required_fields = [
             "incident_type",
@@ -180,36 +150,25 @@ class EmergencyClassifier:
                 reason=(
                     "AI response was incomplete. "
                     "Missing fields: "
-                    + ", ".join(
-                        missing_fields
-                    )
+                    + ", ".join(missing_fields)
                 ),
                 similarity_score=highest_similarity,
                 similar_incidents=similar_incidents,
             )
 
         # -------------------------------------------------
-        # Attach retrieval evidence to AI response
+        # Attach retrieval evidence
         # -------------------------------------------------
 
-        ai_result[
-            "similar_incidents"
-        ] = similar_incidents
+        ai_result["similar_incidents"] = similar_incidents
 
-        ai_result[
-            "highest_similarity_score"
-        ] = round(
+        ai_result["highest_similarity_score"] = round(
             highest_similarity,
             4,
         )
 
-        ai_result[
-            "needs_human_review"
-        ] = False
-
-        ai_result[
-            "evidence_status"
-        ] = "Sufficient"
+        ai_result["needs_human_review"] = False
+        ai_result["evidence_status"] = "Sufficient"
 
         return ai_result
 
@@ -225,15 +184,10 @@ class EmergencyClassifier:
     ):
         return {
             "incident_type": "Uncertain",
-
             "risk_level": "Uncertain",
-
             "priority": "Human Review Required",
-
             "confidence_score": 0.0,
-
             "responders": [],
-
             "key_risks": [],
 
             "summary": (
@@ -244,14 +198,12 @@ class EmergencyClassifier:
 
             "recommended_response": (
                 "A trained emergency operator "
-                "should manually review this "
-                "incident."
+                "should manually review this incident."
             ),
 
             "reasoning": reason,
 
             "needs_human_review": True,
-
             "evidence_status": "Insufficient",
 
             "highest_similarity_score": round(
@@ -259,7 +211,5 @@ class EmergencyClassifier:
                 4,
             ),
 
-            "similar_incidents": (
-                similar_incidents or []
-            ),
+            "similar_incidents": similar_incidents or [],
         }
