@@ -184,12 +184,13 @@ def delete_incident(
 # HISTORICAL INCIDENT DATASET
 # =========================================================
 
+
 def get_historical_incidents(
     limit: int = 5000,
 ):
     """
-    Retrieve a general historical incident sample
-    for semantic TF-IDF comparison.
+    Retrieve a general historical candidate pool
+    for TF-IDF comparison.
     """
 
     try:
@@ -197,19 +198,8 @@ def get_historical_incidents(
             supabase
             .table("historical_incidents")
             .select(
-                "id,"
-                "title,"
-                "description,"
-                "incident_type,"
-                "priority_level,"
-                "location,"
-                "addr,"
-                "twp,"
-                "timeStamp"
-            )
-            .order(
-                "timeStamp",
-                desc=False,
+                "id,title,description,incident_type,"
+                "priority_level,location,addr,twp,timeStamp"
             )
             .limit(limit)
             .execute()
@@ -224,25 +214,22 @@ def get_historical_incidents(
         )
         raise
 
-
 def get_location_historical_incidents(
     location: str,
     limit: int = 1000,
 ):
     """
     Retrieve additional historical candidates
-    using words from the reported location.
+    matching parts of the reported location.
 
-    This does NOT calculate the final similarity.
-    Final ranking is still performed by the
-    TF-IDF/cosine similarity pipeline.
+    Final similarity ranking is still performed
+    by the TF-IDF retrieval pipeline.
     """
 
     if not location or not location.strip():
         return []
 
     try:
-        # Break user location into useful components.
         parts = [
             part.strip()
             for part in location.split(",")
@@ -252,7 +239,6 @@ def get_location_historical_incidents(
         candidates = []
 
         for part in parts:
-            # Skip very short values.
             if len(part) < 3:
                 continue
 
@@ -260,15 +246,8 @@ def get_location_historical_incidents(
                 supabase
                 .table("historical_incidents")
                 .select(
-                    "id,"
-                    "title,"
-                    "description,"
-                    "incident_type,"
-                    "priority_level,"
-                    "location,"
-                    "addr,"
-                    "twp,"
-                    "timeStamp"
+                    "id,title,description,incident_type,"
+                    "priority_level,location,addr,twp,timeStamp"
                 )
                 .ilike(
                     "addr",
@@ -286,15 +265,8 @@ def get_location_historical_incidents(
                 supabase
                 .table("historical_incidents")
                 .select(
-                    "id,"
-                    "title,"
-                    "description,"
-                    "incident_type,"
-                    "priority_level,"
-                    "location,"
-                    "addr,"
-                    "twp,"
-                    "timeStamp"
+                    "id,title,description,incident_type,"
+                    "priority_level,location,addr,twp,timeStamp"
                 )
                 .ilike(
                     "twp",
@@ -308,7 +280,7 @@ def get_location_historical_incidents(
                 twp_response.data or []
             )
 
-        # Remove duplicate records.
+        # Remove duplicate database rows
         unique = {}
 
         for incident in candidates:
