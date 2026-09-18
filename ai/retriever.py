@@ -4,17 +4,20 @@ from similarity import find_ai_similar_incidents
 
 def retrieve_similar_incidents(
     description: str,
+    location: str = "",
     top_k: int = 5,
 ):
     if not description or not description.strip():
         return []
 
-    historical_incidents = get_historical_incidents(
-        limit=5000
+    historical_incidents = (
+        get_historical_incidents(
+            limit=5000
+        )
     )
 
     print(
-        f"Historical incidents loaded: "
+        "Historical incidents loaded: "
         f"{len(historical_incidents)}"
     )
 
@@ -23,6 +26,7 @@ def retrieve_similar_incidents(
 
     return find_ai_similar_incidents(
         new_description=description,
+        new_location=location,
         historical_incidents=historical_incidents,
         top_k=top_k,
     )
